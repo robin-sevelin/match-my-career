@@ -4,3 +4,22 @@
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
 }
+
+header {
+  height: 100px;
+}
+
+a {
+  margin-inline: 1rem;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+}
+
+footer {
+  height: 100px;
+  bottom: 0;
+  position: absolute;
+}
