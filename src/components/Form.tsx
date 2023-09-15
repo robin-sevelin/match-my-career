@@ -5,7 +5,6 @@ import { EducationTypes } from './EducationTypes';
 export const Form = () => {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    alert('hej');
   };
   return (
     <>
