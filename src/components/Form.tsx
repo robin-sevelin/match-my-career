@@ -1,14 +1,20 @@
+import { FormEvent } from 'react';
 import { EducationForm } from './EducationForm';
 import { EducationTypes } from './EducationTypes';
-import { Municipalities } from './Municipalities';
 
 export const Form = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    alert('hej');
+  };
   return (
     <>
       <h2>search route</h2>
-      <EducationForm />
-      <EducationTypes />
-      <Municipalities />
+      <form onSubmit={handleSubmit}>
+        <EducationForm />
+        <EducationTypes />
+        <button type='submit'>Submit</button>
+      </form>
     </>
   );
 };

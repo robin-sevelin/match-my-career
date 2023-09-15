@@ -1,20 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IEducaton } from '../models/IEducation';
 import { getEducationTypes } from '../services/DataService';
+import { DigiFormSelect } from '@digi/arbetsformedlingen-react';
+import {
+  FormSelectValidation,
+  FormSelectVariation,
+} from '@digi/arbetsformedlingen';
 
 export const EducationTypes = () => {
   const [result, setResult] = useState<IEducaton[]>([]);
-  const handleClick = async () => {
-    const response = await getEducationTypes();
 
-    setResult(response);
+  useEffect(() => {
+    if (result.length === 0) {
+      getData();
+    }
+  });
+
+  const getData = async () => {
+    setResult(await getEducationTypes());
   };
   return (
     <>
-      <button onClick={handleClick}>sök</button>
-      {result.map((res) => (
-        <div key={res.key}>{res.value}</div>
-      ))}
+      <DigiFormSelect
+        afLabel='Utbildningstyp'
+        afVariation={FormSelectVariation.MEDIUM}
+        afValidation={FormSelectValidation.NEUTRAL}
+        afPlaceholder='Utbildningstyp'
+      >
+        {result.map((res) => (
+          <option key={res.key} value={res.key}>
+            {res.value}
+          </option>
+        ))}
+      </DigiFormSelect>
     </>
   );
 };
