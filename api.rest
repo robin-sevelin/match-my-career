@@ -20,6 +20,3 @@ GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/education_types
 
 
 
-#### get kommuner
-
-GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/municipalities
