@@ -1,28 +1,27 @@
-import { DigiFormSelect } from '@digi/arbetsformedlingen-react';
-import {
-  FormSelectValidation,
-  FormSelectVariation,
-} from '@digi/arbetsformedlingen';
 import { useLoaderData } from 'react-router-dom';
 import { IEducationLoader } from '../loaders/educationLoader';
+import { SearchContext } from '../contexts/SearchContext';
+import { ChangeEvent, useContext } from 'react';
+import { ActionType } from '../reducers/SearchReducer';
 
 export const EducationForm = () => {
   const { educationForms } = useLoaderData() as IEducationLoader;
+  const { dispatch } = useContext(SearchContext);
 
   return (
     <>
-      <DigiFormSelect
-        afLabel='Utbildningsform'
-        afVariation={FormSelectVariation.MEDIUM}
-        afValidation={FormSelectValidation.NEUTRAL}
-        afPlaceholder='Utbildningsform'
+      <select
+        onChange={(e: ChangeEvent<HTMLSelectElement>) =>
+          dispatch({
+            type: ActionType.ADDED_EDUCATION_FORM,
+            payload: e.target.value,
+          })
+        }
       >
         {educationForms.map((res) => (
-          <option key={res.key} value={res.key}>
-            {res.value}
-          </option>
+          <option key={res.key}>{res.value}</option>
         ))}
-      </DigiFormSelect>
+      </select>
     </>
   );
 };
