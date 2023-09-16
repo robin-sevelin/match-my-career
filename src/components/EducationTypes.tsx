@@ -1,14 +1,13 @@
-import { useContext } from 'react';
-
 import { DigiFormSelect } from '@digi/arbetsformedlingen-react';
 import {
   FormSelectValidation,
   FormSelectVariation,
 } from '@digi/arbetsformedlingen';
-import { EducationContext } from '../contexts/EducationContext';
+import { useLoaderData } from 'react-router-dom';
+import { IEducationLoader } from '../loaders/educationLoader';
 
 export const EducationTypes = () => {
-  const { educationType } = useContext(EducationContext);
+  const { educationTypes } = useLoaderData() as IEducationLoader;
   return (
     <>
       <DigiFormSelect
@@ -17,7 +16,7 @@ export const EducationTypes = () => {
         afValidation={FormSelectValidation.NEUTRAL}
         afPlaceholder='Utbildningstyp'
       >
-        {educationType.map((res) => (
+        {educationTypes.map((res) => (
           <option key={res.key} value={res.key}>
             {res.value}
           </option>

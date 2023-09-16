@@ -1,13 +1,13 @@
-import { useContext } from 'react';
 import { DigiFormSelect } from '@digi/arbetsformedlingen-react';
 import {
   FormSelectValidation,
   FormSelectVariation,
 } from '@digi/arbetsformedlingen';
-import { EducationContext } from '../contexts/EducationContext';
+import { useLoaderData } from 'react-router-dom';
+import { IEducationLoader } from '../loaders/educationLoader';
 
 export const EducationForm = () => {
-  const { educationForm } = useContext(EducationContext);
+  const { educationForms } = useLoaderData() as IEducationLoader;
 
   return (
     <>
@@ -17,7 +17,7 @@ export const EducationForm = () => {
         afValidation={FormSelectValidation.NEUTRAL}
         afPlaceholder='Utbildningsform'
       >
-        {educationForm.map((res) => (
+        {educationForms.map((res) => (
           <option key={res.key} value={res.key}>
             {res.value}
           </option>
