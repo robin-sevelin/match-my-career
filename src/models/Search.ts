@@ -1,6 +1,6 @@
 export class Search {
   constructor(
-    public educationType: string,
+    public resultAmount: number,
     public educationForm: string,
     public searchText: string
   ) {}

@@ -1,7 +1,7 @@
 
 ### enriched occupations
 
-GET https://jobed-connect-api.jobtechdev.se/v1/enriched_occupations?occupation_id=2tSL_RP2_jUP&include_metadata=true
+GET https://jobed-connect-api.jobtechdev.se/v1/enriched_occupations?occupation_id=fg7B_yov_smw&include_metadata=true
 
 
 #### search by text

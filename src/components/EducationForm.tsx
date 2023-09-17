@@ -1,12 +1,12 @@
-import { useLoaderData } from 'react-router-dom';
-import { IEducationLoader } from '../loaders/educationLoader';
 import { SearchContext } from '../contexts/SearchContext';
 import { ChangeEvent, useContext } from 'react';
 import { ActionType } from '../reducers/SearchReducer';
+import { useLoaderData } from 'react-router-dom';
+import { IEducationLoader } from '../loaders/educationLoader';
 
 export const EducationForm = () => {
-  const { educationForms } = useLoaderData() as IEducationLoader;
   const { dispatch } = useContext(SearchContext);
+  const { educationForms } = useLoaderData() as IEducationLoader;
 
   return (
     <>
