@@ -20,6 +20,6 @@ GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/education_types
 
 
 
-#### get kommuner
+### get educations
 
-GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/municipalities
+GET https://jobed-connect-api.jobtechdev.se/v1/educations?query=kock&education_type=kurs&education_form=h%C3%B6gskoleutbildning&distance=false&filter_education_plan_exists=false

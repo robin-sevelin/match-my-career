@@ -1,23 +1,21 @@
 import { ChangeEvent, FormEvent, useContext } from 'react';
 import { EducationForm } from './EducationForm';
-
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
-import { postSearchText } from '../services/DataService';
+import { EducationType } from './EducationType';
+import { getEducations } from '../services/DataService';
 
 export const Form = () => {
   const { dispatch, search } = useContext(SearchContext);
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const response = await postSearchText(
-      search.educationForm,
+    const response = await getEducations(
       search.searchText,
-      search.resultAmount
+      search.educationForm,
+      search.educationType
     );
-
     console.log(response);
-    localStorage.removeItem('search');
   };
   return (
     <>
@@ -32,21 +30,9 @@ export const Form = () => {
             })
           }
         />
-        <input
-          min={1}
-          max={20}
-          type='number'
-          placeholder='antal träffar'
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            dispatch({
-              type: ActionType.ADDED_RESULT_AMOUNT,
-              payload: e.target.value.toString(),
-            })
-          }
-        />
+
         <EducationForm />
-        {/* <EducationTypes /> */}
-        <button type='submit'>Submit</button>
+        <EducationType />
       </form>
     </>
   );

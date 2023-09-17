@@ -1,12 +1,14 @@
-import { IEducaton } from '../models/IEducation';
-import { getEducationForms } from '../services/DataService';
+import { IFormValue } from '../models/IFormValue';
+import { getEducationForms, getEducationTypes } from '../services/DataService';
 
-export interface IEducationLoader {
-  educationForms: IEducaton[];
+export interface IFormValueLoader {
+  educationForms: IFormValue[];
+  educationTypes: IFormValue[];
 }
 
 export const educationLoader = async () => {
   return {
     educationForms: await getEducationForms(),
-  } as IEducationLoader;
+    educationTypes: await getEducationTypes(),
+  } as IFormValueLoader;
 };
