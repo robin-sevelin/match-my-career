@@ -1,18 +1,18 @@
 import { Result } from '../models/Result';
 
 export interface IResultAction {
-  type: ActionType;
+  type: ResultActionType;
   payload: string;
 }
 
-export enum ActionType {
-  ADDED_SEARCH_TEXT,
+export enum ResultActionType {
+  ADDED_SEARCH,
 }
 
 export const ResultReducer = (result: Result, action: IResultAction) => {
   switch (action.type) {
-    case ActionType.ADDED_SEARCH_TEXT: {
-      return { ...result };
+    case ResultActionType.ADDED_SEARCH: {
+      return { ...result, freeSearchText: action.payload };
     }
 
     default:

@@ -20,11 +20,12 @@ function App() {
     'result',
     new Result('')
   );
+
   const [search, searchDispatch] = useReducer(SearchReducer, storedSearch);
   const [result, resultDispatch] = useReducer(ResultReducer, storedResult);
 
   useGetSearch(search, setStoredSearch);
-  useGetResult(storedResult, setStoredResult);
+  useGetResult(result, setStoredResult);
   return (
     <>
       <ResultContext.Provider value={{ result, resultDispatch }}>

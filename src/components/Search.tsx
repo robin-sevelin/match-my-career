@@ -1,20 +1,28 @@
 import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-import { ActionType } from '../reducers/SearchReducer';
+
 import { getEducations } from '../services/DataService';
 import { ResultContainer } from './ResultContainer';
+import { ResultContext } from '../contexts/ResultContext';
+import { SearchActionType } from '../reducers/SearchReducer';
+import { ResultActionType } from '../reducers/ResultReducer';
 
 export const Search = () => {
   const { searchDispatch, search } = useContext(SearchContext);
+  const { resultDispatch } = useContext(ResultContext);
+
   const [input, setInput] = useState('');
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    searchDispatch({ type: ActionType.ADDED_SEARCH_TEXT, payload: input });
+    searchDispatch({
+      type: SearchActionType.ADDED_SEARCH_TEXT,
+      payload: input,
+    });
+    resultDispatch({ type: ResultActionType.ADDED_SEARCH, payload: input });
 
     const response = await getEducations(search.searchText);
     console.log(response);
-    localStorage.removeItem('search');
     setInput('');
   };
   return (
