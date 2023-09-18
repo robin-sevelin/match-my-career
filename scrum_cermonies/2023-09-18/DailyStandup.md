@@ -8,6 +8,7 @@ Today I will work on the logic for rendering out information about specific chos
 I will ask the team for assistance if I get stuck!
 
 ### Emilia
+Today I will work on rendering the search result. The search result will be presented as a list of interactive cards.
 
 ### Robin
 
