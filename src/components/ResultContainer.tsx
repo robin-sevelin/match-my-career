@@ -1,7 +1,11 @@
+import { ResultCardContainer } from "./ResultCardContainer";
+
 export const ResultContainer = () => {
   return (
     <>
-      <div className='result'></div>
+      <div className='result'>
+        <ResultCardContainer></ResultCardContainer>
+      </div>
     </>
   );
 };
