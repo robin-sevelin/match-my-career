@@ -1,7 +1,9 @@
+import { RelatedOccupations } from './RelatedOccupations';
+
 export const ResultContainer = () => {
   return (
     <>
-      <div className='result'></div>
+      <RelatedOccupations />
     </>
   );
 };
