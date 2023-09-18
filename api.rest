@@ -28,3 +28,9 @@ GET https://jobed-connect-api.jobtechdev.se/v1/educations?query=kock&education_t
 ### get about education: id
 
 GET https://jobed-connect-api.jobtechdev.se/v1/educations/i.fbr.69199.400296
+
+
+
+### get 
+
+GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/municipalities

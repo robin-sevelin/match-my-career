@@ -21,15 +21,11 @@ export const getmMunicipalities = async (): Promise<IFormValue[]> => {
   );
 };
 
-export const getEducations = async (
-  text: string,
-  form: string,
-  type: string
-): Promise<IEducation[]> => {
+export const getEducations = async (text: string): Promise<IEducation[]> => {
   const response = await get<IEducationResponse>(
     `${
       import.meta.env.VITE_BASE_URL
-    }educations?query=${text}&education_type=${type}&education_form=${form}&distance=false&filter_education_plan_exists=false`
+    }educations?query=${text}&distance=false&filter_education_plan_exists=false`
   );
 
   return response.result;

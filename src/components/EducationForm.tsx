@@ -18,6 +18,7 @@ export const EducationForm = () => {
           })
         }
       >
+        <option value=''>Utbildningsform</option>
         {educationForms.map((res) => (
           <option key={res.key}>{res.value}</option>
         ))}

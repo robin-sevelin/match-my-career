@@ -18,6 +18,7 @@ export const EducationType = () => {
           })
         }
       >
+        <option value=''>Utbildningstyp</option>
         {educationTypes.map((res) => (
           <option key={res.key}>{res.value}</option>
         ))}

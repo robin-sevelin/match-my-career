@@ -1,40 +1,34 @@
-import { ChangeEvent, FormEvent, useContext } from 'react';
-import { EducationForm } from './EducationForm';
+import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
-import { EducationType } from './EducationType';
 import { getEducations } from '../services/DataService';
-import { Municipalities } from './Municipalities';
 
 export const Form = () => {
   const { dispatch, search } = useContext(SearchContext);
+  const [input, setInput] = useState('');
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    const response = await getEducations(
-      search.searchText,
-      search.educationForm,
-      search.educationType
-    );
+    dispatch({ type: ActionType.ADDED_SEARCH_TEXT, payload: input });
+
+    const response = await getEducations(search.searchText);
     console.log(response);
+    localStorage.removeItem('search');
+    setInput('');
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
         <input
+          value={input}
           type='text'
           placeholder='jobb-titel'
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            dispatch({
-              type: ActionType.ADDED_SEARCH_TEXT,
-              payload: e.target.value,
-            })
-          }
+          onChange={(e) => setInput(e.target.value)}
         />
 
-        <EducationForm />
+        {/* <EducationForm />
         <EducationType />
-        <Municipalities />
+        <Municipalities /> */}
         <button type='submit'>Sök</button>
       </form>
     </>

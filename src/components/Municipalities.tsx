@@ -13,11 +13,12 @@ export const Municipalities = () => {
       <select
         onChange={(e: ChangeEvent<HTMLSelectElement>) =>
           dispatch({
-            type: ActionType.ADDED_EDUCATION_FORM,
+            type: ActionType.ADDED_MUNICIPALITIES,
             payload: e.target.value,
           })
         }
       >
+        <option value=''>Kommun</option>
         {municipalities.map((res) => (
           <option key={res.key}>{res.value}</option>
         ))}

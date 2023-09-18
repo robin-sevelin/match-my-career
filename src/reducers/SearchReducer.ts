@@ -9,6 +9,7 @@ export enum ActionType {
   ADDED_EDUCATION_FORM,
   ADDED_EDUCATION_TYPE,
   ADDED_SEARCH_TEXT,
+  ADDED_MUNICIPALITIES,
 }
 
 export const SearchReducer = (search: Search, action: ISearchAction) => {
@@ -23,6 +24,10 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
 
     case ActionType.ADDED_SEARCH_TEXT: {
       return { ...search, searchText: action.payload };
+    }
+
+    case ActionType.ADDED_MUNICIPALITIES: {
+      return { ...search, municipalities: action.payload };
     }
 
     default:
