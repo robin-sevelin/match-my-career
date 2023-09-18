@@ -1,28 +1,27 @@
 import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-
 import { getEducations } from '../services/DataService';
 import { ResultContainer } from './ResultContainer';
-import { ResultContext } from '../contexts/ResultContext';
-import { SearchActionType } from '../reducers/SearchReducer';
-import { ResultActionType } from '../reducers/ResultReducer';
+import { ActionType } from '../reducers/SearchReducer';
 
 export const Search = () => {
-  const { searchDispatch, search } = useContext(SearchContext);
-  const { resultDispatch } = useContext(ResultContext);
+  const { dispatch, search } = useContext(SearchContext);
 
   const [input, setInput] = useState('');
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    searchDispatch({
-      type: SearchActionType.ADDED_SEARCH_TEXT,
+    const response = await getEducations(search.searchText);
+    dispatch({
+      type: ActionType.ADDED_SEARCH_TEXT,
       payload: input,
     });
-    resultDispatch({ type: ResultActionType.ADDED_SEARCH, payload: input });
 
-    const response = await getEducations(search.searchText);
-    console.log(response);
+    dispatch({
+      type: ActionType.ADDED_EDUCATIONS,
+      payload: JSON.stringify(response),
+    });
+
     setInput('');
   };
   return (

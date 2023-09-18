@@ -1,8 +1,5 @@
+import { IEducation } from './IEducation';
+
 export class Search {
-  constructor(
-    public municipalities: string,
-    public educationType: string,
-    public educationForm: string,
-    public searchText: string
-  ) {}
+  constructor(public searchText: string, public educations: IEducation[]) {}
 }

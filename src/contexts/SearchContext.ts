@@ -4,10 +4,10 @@ import { Search } from '../models/Search';
 
 export interface ISearchContext {
   search: Search;
-  searchDispatch: Dispatch<ISearchAction>;
+  dispatch: Dispatch<ISearchAction>;
 }
 
 export const SearchContext = createContext<ISearchContext>({
-  search: new Search('', '', '', ''),
-  searchDispatch: () => {},
+  search: new Search('', []),
+  dispatch: () => {},
 });

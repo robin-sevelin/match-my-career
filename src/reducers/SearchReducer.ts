@@ -1,34 +1,28 @@
+import { IEducation } from '../models/IEducation';
 import { Search } from '../models/Search';
 
 export interface ISearchAction {
-  type: SearchActionType;
+  type: ActionType;
   payload: string;
 }
 
-export enum SearchActionType {
-  ADDED_EDUCATION_FORM,
-  ADDED_EDUCATION_TYPE,
+export enum ActionType {
   ADDED_SEARCH_TEXT,
-  ADDED_MUNICIPALITIES,
-  ADDED_SEARCH,
+  ADDED_EDUCATIONS,
 }
 
 export const SearchReducer = (search: Search, action: ISearchAction) => {
   switch (action.type) {
-    case SearchActionType.ADDED_EDUCATION_FORM: {
-      return { ...search, educationForm: action.payload };
-    }
-
-    case SearchActionType.ADDED_EDUCATION_TYPE: {
-      return { ...search, educationType: action.payload };
-    }
-
-    case SearchActionType.ADDED_SEARCH_TEXT: {
+    case ActionType.ADDED_SEARCH_TEXT: {
       return { ...search, searchText: action.payload };
     }
 
-    case SearchActionType.ADDED_MUNICIPALITIES: {
-      return { ...search, municipalities: action.payload };
+    case ActionType.ADDED_EDUCATIONS: {
+      const data = JSON.parse(action.payload) as IEducation;
+
+      const array = [...search.educations, data];
+
+      return { ...search, educations: array };
     }
 
     default:

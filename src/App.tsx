@@ -6,33 +6,21 @@ import { SearchContext } from './contexts/SearchContext';
 import { Search } from './models/Search';
 import { useLocalStorage } from './hooks/useStorage';
 import { useGetSearch } from './hooks/useGetSearch';
-import { ResultContext } from './contexts/ResultContext';
-import { Result } from './models/Result';
-import { useGetResult } from './hooks/useGetResult';
-import { ResultReducer } from './reducers/ResultReducer';
 
 function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
     'search',
-    new Search('', '', '', '')
-  );
-  const [storedResult, setStoredResult] = useLocalStorage<Result>(
-    'result',
-    new Result('')
+    new Search('', [])
   );
 
-  const [search, searchDispatch] = useReducer(SearchReducer, storedSearch);
-  const [result, resultDispatch] = useReducer(ResultReducer, storedResult);
+  const [search, dispatch] = useReducer(SearchReducer, storedSearch);
 
   useGetSearch(search, setStoredSearch);
-  useGetResult(result, setStoredResult);
   return (
     <>
-      <ResultContext.Provider value={{ result, resultDispatch }}>
-        <SearchContext.Provider value={{ search, searchDispatch }}>
-          <RouterProvider router={router} />
-        </SearchContext.Provider>
-      </ResultContext.Provider>
+      <SearchContext.Provider value={{ search, dispatch }}>
+        <RouterProvider router={router} />
+      </SearchContext.Provider>
     </>
   );
 }
