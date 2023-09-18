@@ -1,7 +1,7 @@
 import { IEducation } from '../models/IEducation';
 import { IEducationResponse } from '../models/IEducationResponse';
 import { IFormValue } from '../models/IFormValue';
-import { get } from './DataServiceBase';
+import { get, post } from './DataServiceBase';
 
 export const getEducationForms = async (): Promise<IFormValue[]> => {
   return await get<IFormValue[]>(
@@ -35,4 +35,14 @@ export const getEnrichedOccupations = async (id: string) => {
       import.meta.env.VITE_BASE_URL
     }enriched_occupations?occupation_id=${id}&include_metadata=true`
   );
+};
+
+export const postMatchByText = async (text: string, education: string) => {
+  const response = await post(
+    `${
+      import.meta.env.BASE_URL
+    }occupations/match-by-text?input_text=${text}&input_headline=${education}&limit=10&offset=0&include_metadata=true`
+  );
+
+  return response;
 };

@@ -33,6 +33,7 @@ export const Form = () => {
 
         <EducationForm />
         <EducationType />
+        <button type='submit'>Sök</button>
       </form>
     </>
   );
