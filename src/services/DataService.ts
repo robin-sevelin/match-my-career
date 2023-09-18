@@ -15,6 +15,12 @@ export const getEducationTypes = async (): Promise<IFormValue[]> => {
   );
 };
 
+export const getmMunicipalities = async (): Promise<IFormValue[]> => {
+  return await get<IFormValue[]>(
+    import.meta.env.VITE_BASE_URL + 'searchparameters/municipalities'
+  );
+};
+
 export const getEducations = async (
   text: string,
   form: string,

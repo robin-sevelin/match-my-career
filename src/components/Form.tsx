@@ -4,6 +4,7 @@ import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
 import { EducationType } from './EducationType';
 import { getEducations } from '../services/DataService';
+import { Municipalities } from './Municipalities';
 
 export const Form = () => {
   const { dispatch, search } = useContext(SearchContext);
@@ -33,6 +34,7 @@ export const Form = () => {
 
         <EducationForm />
         <EducationType />
+        <Municipalities />
         <button type='submit'>Sök</button>
       </form>
     </>
