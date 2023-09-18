@@ -38,11 +38,13 @@ export const getEnrichedOccupations = async (id: string) => {
 };
 
 export const postMatchByText = async (text: string, education: string) => {
-  const response = await post(
+  return await post(
     `${
-      import.meta.env.BASE_URL
+      import.meta.env.VITE_BASE_URL
     }occupations/match-by-text?input_text=${text}&input_headline=${education}&limit=10&offset=0&include_metadata=true`
   );
+};
 
-  return response;
+export const getEducationById = async (id: string) => {
+  return await get(`${import.meta.env.VITE_BASE_URL}educations/${id}`);
 };
