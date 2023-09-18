@@ -6,12 +6,13 @@ import { ActionType } from '../reducers/SearchReducer';
 
 export const Search = () => {
   const { dispatch, search } = useContext(SearchContext);
-
   const [input, setInput] = useState('');
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const response = await getEducations(search.searchText);
+
     dispatch({
       type: ActionType.ADDED_SEARCH_TEXT,
       payload: input,
@@ -21,9 +22,9 @@ export const Search = () => {
       type: ActionType.ADDED_EDUCATIONS,
       payload: JSON.stringify(response),
     });
-
     setInput('');
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>

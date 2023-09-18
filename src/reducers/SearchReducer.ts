@@ -1,4 +1,5 @@
 import { IEducation } from '../models/IEducation';
+import { IOccupation } from '../models/IRelatedOccupations';
 import { Search } from '../models/Search';
 
 export interface ISearchAction {
@@ -9,6 +10,7 @@ export interface ISearchAction {
 export enum ActionType {
   ADDED_SEARCH_TEXT,
   ADDED_EDUCATIONS,
+  ADDED_OCCUPATIONS,
 }
 
 export const SearchReducer = (search: Search, action: ISearchAction) => {
@@ -18,11 +20,15 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
     }
 
     case ActionType.ADDED_EDUCATIONS: {
-      const data = JSON.parse(action.payload) as IEducation;
+      const data = JSON.parse(action.payload) as IEducation[];
 
-      const array = [...search.educations, data];
+      return { ...search, educations: data };
+    }
 
-      return { ...search, educations: array };
+    case ActionType.ADDED_OCCUPATIONS: {
+      const data = JSON.parse(action.payload) as IOccupation[];
+
+      return { ...search, occupations: data };
     }
 
     default:

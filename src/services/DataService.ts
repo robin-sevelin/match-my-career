@@ -4,7 +4,7 @@ import { IFormValue } from '../models/IFormValue';
 import {
   IOccupation,
   IRealatedOccupations,
-} from '../models/IRelatedOccupation';
+} from '../models/IRelatedOccupations';
 import { get, post } from './DataServiceBase';
 
 export const getEducationForms = async (): Promise<IFormValue[]> => {

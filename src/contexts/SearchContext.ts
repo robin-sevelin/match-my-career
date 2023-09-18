@@ -8,6 +8,6 @@ export interface ISearchContext {
 }
 
 export const SearchContext = createContext<ISearchContext>({
-  search: new Search('', []),
+  search: new Search('', [], []),
   dispatch: () => {},
 });

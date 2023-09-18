@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
-import { IOccupation } from '../models/IRelatedOccupation';
+import { useContext, useEffect, useState } from 'react';
+import { IOccupation } from '../models/IRelatedOccupations';
 import {
   getEnrichedOccupations,
   postMatchByText,
 } from '../services/DataService';
+import { OccupationView } from './OccupationView';
+import { SearchContext } from '../contexts/SearchContext';
+import { ActionType } from '../reducers/SearchReducer';
 
-export const RelatedOccupations = () => {
+export const OccupationsList = () => {
+  const { dispatch } = useContext(SearchContext);
   const [occupations, setOccupations] = useState<IOccupation[]>([]);
   const title: string = 'frontend';
   const education: string = 'systemutvecklare';
@@ -21,17 +25,17 @@ export const RelatedOccupations = () => {
   const handleClick = async (id: string) => {
     const response = await getEnrichedOccupations(id);
 
-    console.log(response);
+    dispatch({
+      type: ActionType.ADDED_OCCUPATIONS,
+      payload: JSON.stringify(response),
+    });
   };
 
   return (
     <>
       {occupations.map((occupation) => (
         <div key={occupation.id}>
-          {occupation.occupation_label}
-          <button onClick={() => handleClick(occupation.id)}>
-            Klicka på mig
-          </button>
+          <OccupationView occupation={occupation} onHandleClick={handleClick} />
         </div>
       ))}
     </>

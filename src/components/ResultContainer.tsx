@@ -1,9 +1,9 @@
-import { RelatedOccupations } from './RelatedOccupations';
+import { OccupationsList } from './OccupationsList';
 
 export const ResultContainer = () => {
   return (
     <>
-      <RelatedOccupations />
+      <OccupationsList />
     </>
   );
 };
