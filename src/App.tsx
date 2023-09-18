@@ -9,6 +9,7 @@ import { useGetSearch } from './hooks/useGetSearch';
 import { ResultContext } from './contexts/ResultContext';
 import { Result } from './models/Result';
 import { useGetResult } from './hooks/useGetResult';
+import { ResultReducer } from './reducers/ResultReducer';
 
 function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
@@ -19,14 +20,15 @@ function App() {
     'result',
     new Result('')
   );
-  const [search, dispatch] = useReducer(SearchReducer, storedSearch);
+  const [search, searchDispatch] = useReducer(SearchReducer, storedSearch);
+  const [result, resultDispatch] = useReducer(ResultReducer, storedResult);
 
   useGetSearch(search, setStoredSearch);
   useGetResult(storedResult, setStoredResult);
   return (
     <>
-      <ResultContext.Provider value={{}}>
-        <SearchContext.Provider value={{ search, dispatch }}>
+      <ResultContext.Provider value={{ result, resultDispatch }}>
+        <SearchContext.Provider value={{ search, searchDispatch }}>
           <RouterProvider router={router} />
         </SearchContext.Provider>
       </ResultContext.Provider>

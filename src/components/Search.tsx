@@ -5,12 +5,12 @@ import { getEducations } from '../services/DataService';
 import { ResultContainer } from './ResultContainer';
 
 export const Search = () => {
-  const { dispatch, search } = useContext(SearchContext);
+  const { searchDispatch, search } = useContext(SearchContext);
   const [input, setInput] = useState('');
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    dispatch({ type: ActionType.ADDED_SEARCH_TEXT, payload: input });
+    searchDispatch({ type: ActionType.ADDED_SEARCH_TEXT, payload: input });
 
     const response = await getEducations(search.searchText);
     console.log(response);
