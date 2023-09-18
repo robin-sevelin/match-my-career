@@ -35,8 +35,10 @@ export const getEducations = async (text: string): Promise<IEducation[]> => {
   return response.result;
 };
 
-export const getEnrichedOccupations = async (id: string) => {
-  return await get(
+export const getEnrichedOccupations = async (
+  id: string
+): Promise<IRealatedOccupations> => {
+  return await get<IRealatedOccupations>(
     `${
       import.meta.env.VITE_BASE_URL
     }enriched_occupations?occupation_id=${id}&include_metadata=true`

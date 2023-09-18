@@ -18,8 +18,8 @@ export const OccupationsList = () => {
   }, []);
 
   const getData = async () => {
-    const response = await postMatchByText(title, education);
-    setOccupations(response);
+    await postMatchByText(title, education);
+    setOccupations(await postMatchByText(title, education));
   };
 
   const handleClick = async (id: string) => {
@@ -27,17 +27,22 @@ export const OccupationsList = () => {
 
     dispatch({
       type: ActionType.ADDED_OCCUPATIONS,
+      payload: JSON.stringify(occupations),
+    });
+
+    dispatch({
+      type: ActionType.ADDED_ENRICHED_OCCUPATIONS,
       payload: JSON.stringify(response),
     });
   };
 
   return (
-    <>
+    <div className='occupations-container'>
       {occupations.map((occupation) => (
         <div key={occupation.id}>
           <OccupationView occupation={occupation} onHandleClick={handleClick} />
         </div>
       ))}
-    </>
+    </div>
   );
 };
