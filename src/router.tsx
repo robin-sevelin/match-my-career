@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
-import { Form } from './components/Form';
 import { educationLoader } from './loaders/educationLoader';
+import { Search } from './components/Search';
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/search',
-        element: <Form />,
+        element: <Search />,
         loader: educationLoader,
       },
     ],

@@ -2,8 +2,9 @@ import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
 import { getEducations } from '../services/DataService';
+import { ResultContainer } from './ResultContainer';
 
-export const Form = () => {
+export const Search = () => {
   const { dispatch, search } = useContext(SearchContext);
   const [input, setInput] = useState('');
   const handleSubmit = async (e: FormEvent) => {
@@ -31,6 +32,7 @@ export const Form = () => {
         <Municipalities /> */}
         <button type='submit'>Sök</button>
       </form>
+      <ResultContainer />
     </>
   );
 };
