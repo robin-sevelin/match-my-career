@@ -4,8 +4,16 @@ export const Header = () => {
   return (
     <>
       <h1>Hello header</h1>
-      <Link to={'/'}>Hem</Link>
-      <Link to={'/search'}>Sök</Link>
+      <nav>
+        <ul>
+          <li>
+            <Link to={'/'}>Hem</Link>
+          </li>
+          <li>
+            <Link to={'/search'}>Sök</Link>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };
