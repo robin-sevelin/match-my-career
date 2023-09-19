@@ -6,12 +6,7 @@ export interface IEducation {
       type: string;
     };
     identifier: string;
-    title: [
-      {
-        lang: string;
-        content: string;
-      }
-    ];
+    title: ITitle[];
     subject: ISubject[];
     form: {
       code: string;
@@ -26,11 +21,7 @@ export interface ISubject {
   type: string;
 }
 
-[
-  {
-    code: '388',
-    name: 'Religionsvetenskap och teologi',
-    nameEn: 'Religious Studies',
-    type: 'UOH',
-  },
-];
+export interface ITitle {
+  lang: string;
+  content: string;
+}

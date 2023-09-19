@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-
 import { OccupationView } from './OccupationView';
 import { SearchContext } from '../contexts/SearchContext';
 

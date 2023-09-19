@@ -1,3 +1,12 @@
+import { useContext } from 'react';
+import { SearchContext } from '../contexts/SearchContext';
+
 export const EnrichedOccupations = () => {
-  return <></>;
+  const { search } = useContext(SearchContext);
+
+  if (search.competencies) {
+    console.log(search.competencies);
+  }
+
+  return <div className='competencies'></div>;
 };

@@ -10,8 +10,8 @@ export const ResultCardContainer = () => {
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
-      education.education.subject[0].name,
-      education.education.subject[0].name
+      education.education.title[0].content,
+      education.education.title[0].content
     );
     dispatch({
       type: ActionType.ADDED_OCCUPATIONS,

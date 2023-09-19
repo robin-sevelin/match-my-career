@@ -1,5 +1,7 @@
 import { IEducation } from '../models/IEducation';
 import { IEducationResponse } from '../models/IEducationResponse';
+import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
+
 import { IFormValue } from '../models/IFormValue';
 import {
   IOccupation,
@@ -37,8 +39,8 @@ export const getEducations = async (text: string): Promise<IEducation[]> => {
 
 export const getEnrichedOccupations = async (
   id: string
-): Promise<IRealatedOccupations> => {
-  return await get<IRealatedOccupations>(
+): Promise<IEnrichedOccupation> => {
+  return await get<IEnrichedOccupation>(
     `${
       import.meta.env.VITE_BASE_URL
     }enriched_occupations?occupation_id=${id}&include_metadata=true`
@@ -49,12 +51,13 @@ export const postMatchByText = async (
   text: string,
   education: string
 ): Promise<IOccupation[]> => {
-  const response = await post<IRealatedOccupations>(
+  const resposne = await post<IRealatedOccupations>(
     `${
       import.meta.env.VITE_BASE_URL
     }occupations/match-by-text?input_text=${text}&input_headline=${education}&limit=10&offset=0&include_metadata=true`
   );
-  return response.related_occupations;
+
+  return resposne.related_occupations;
 };
 
 export const getEducationById = async (id: string) => {

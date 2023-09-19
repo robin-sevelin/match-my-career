@@ -1,4 +1,5 @@
-export interface IEnrichedOccupations {
+export interface IEnrichedOccupation {
+  id: string;
   occupationLabel: string;
   metadata: {
     competencies: ICompetencies[];
