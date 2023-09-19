@@ -10,8 +10,8 @@ export const ResultCardContainer = () => {
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
-      search.searchText,
-      education.education.title[0].content
+      education.education.subject[0].name,
+      education.education.subject[0].name
     );
     dispatch({
       type: ActionType.ADDED_OCCUPATIONS,
@@ -26,7 +26,7 @@ export const ResultCardContainer = () => {
             {education.education.title[0].content} - {education.education.code}
           </h4>
           <p>
-            {education.education.form.code},{' '}
+            {education.education.form.code},
             {education.education.configuration.code}
           </p>
           <DigiButton onClick={() => getOccupations(education)}>
