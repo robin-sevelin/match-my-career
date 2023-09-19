@@ -8,9 +8,15 @@ export interface IEducation {
     identifier: string;
     title: ITitle[];
     subject: ISubject[];
+
     form: {
       code: string;
       type: string;
+    };
+  };
+  text_enrichments_results: {
+    enriched_candidates: {
+      competencies: string[];
     };
   };
 }

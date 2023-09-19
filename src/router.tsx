@@ -3,6 +3,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { educationLoader } from './loaders/educationLoader';
 import { Search } from './components/Search';
+import { EnrichedOccupations } from './components/EnrichedOccupations';
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
         path: '/search',
         element: <Search />,
         loader: educationLoader,
+      },
+      {
+        path: '/skillchart',
+        element: <EnrichedOccupations />,
       },
     ],
   },
