@@ -1,8 +1,3 @@
 export const ResultContainer = () => {
-  return (
-    <>
-      {/* <OccupationsList />
-      <EnrichedOccupations /> */}
-    </>
-  );
+  return <>{/* <OccupationsList /> */}</>;
 };
