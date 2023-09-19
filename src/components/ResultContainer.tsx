@@ -1,3 +1,12 @@
+import { ResultCardContainer } from "./ResultCardContainer";
+
 export const ResultContainer = () => {
-  return <>{/* <OccupationsList /> */}</>;
+
+  return (
+    <>
+      <div className='result'>
+        <ResultCardContainer></ResultCardContainer>
+      </div>
+    </>
+  );
 };
