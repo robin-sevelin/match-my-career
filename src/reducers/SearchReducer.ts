@@ -1,5 +1,5 @@
 import { IEducation } from '../models/IEducation';
-import { ICompetencies } from '../models/IEnrichedOccupation';
+import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 import { IOccupation } from '../models/IRelatedOccupations';
 import { Search } from '../models/Search';
 
@@ -34,9 +34,9 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
     }
 
     case ActionType.ADDED_ENRICHED_OCCUPATIONS: {
-      const data = JSON.parse(action.payload) as ICompetencies[];
+      const data = JSON.parse(action.payload) as IEnrichedOccupation;
 
-      return { ...search, competencies: data };
+      return { ...search, enchrichedOccupation: data };
     }
 
     default:

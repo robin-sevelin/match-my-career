@@ -10,7 +10,11 @@ import { useGetSearch } from './hooks/useGetSearch';
 function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
     'search',
-    new Search('', [], [], [])
+    new Search('', [], [], {
+      id: '',
+      occupation_label: '',
+      metadata: { competencies: [] },
+    })
   );
 
   const [search, dispatch] = useReducer(SearchReducer, storedSearch);

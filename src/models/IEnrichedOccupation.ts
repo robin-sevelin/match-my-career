@@ -1,8 +1,10 @@
 export interface IEnrichedOccupation {
   id: string;
-  occupationLabel: string;
+  occupation_label: string;
   metadata: {
-    competencies: ICompetencies[];
+    enriched_candidates_term_frequency: {
+      competencies: ICompetencies[];
+    };
   };
 }
 
