@@ -1,4 +1,5 @@
 export interface IEducation {
+  id: string,
   education: {
     code: string;
     configuration: {
@@ -16,6 +17,10 @@ export interface IEducation {
     form: {
       code: string,
       type: string,
+    };
+    description: {
+      lang: string,
+      content: string,
     };
   };
 }
