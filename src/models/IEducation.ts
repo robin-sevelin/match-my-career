@@ -1,18 +1,23 @@
 export interface IEducation {
   education: {
-    identifier: string;
-    title: ITitle[];
-    subject: ISubject[];
-  };
-}
-
-export interface ITitle {
-  title: [
-    {
-      lang: string;
-      content: string;
+    code: string;
+    configuration: {
+      code: string, 
+      type: string,
     }
-  ];
+    identifier: string;
+    title: [
+      {
+        lang: string,
+        content: string
+      }
+    ];
+    subject: ISubject[];
+    form: {
+      code: string,
+      type: string,
+    };
+  };
 }
 
 export interface ISubject {
