@@ -11,7 +11,7 @@ export const ResultCardContainer = () => {
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
       education.text_enrichments_results.enriched_candidates.competencies[0],
-      education.education.title[0].content
+      education.education.description[0].content
     );
     dispatch({
       type: ActionType.ADDED_OCCUPATIONS,
