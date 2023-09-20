@@ -24,7 +24,7 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
     case ActionType.ADDED_EDUCATIONS: {
       const data = JSON.parse(action.payload) as IEducation[];
 
-      return { ...search, searchText: '', occupations: [], educations: data };
+      return { ...search, occupations: [], educations: data };
     }
 
     case ActionType.ADDED_OCCUPATIONS: {
