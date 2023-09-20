@@ -9,7 +9,6 @@ export const Search = () => {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
     const response = await getEducations(search.searchText);
 
     dispatch({
@@ -23,12 +22,7 @@ export const Search = () => {
         <input
           type='text'
           placeholder='jobb-titel'
-          onChange={(e) =>
-            dispatch({
-              type: ActionType.ADDED_SEARCH_TEXT,
-              payload: e.target.value,
-            })
-          }
+          onChange={(e) => dispatch({type: ActionType.ADDED_SEARCH_TEXT, payload: e.target.value})}
         />
         <button type='submit'>Sök</button>
       </form>

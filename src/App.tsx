@@ -21,6 +21,7 @@ function App() {
       },
       true
     )
+
   );
 
   const [search, dispatch] = useReducer(SearchReducer, storedSearch);
