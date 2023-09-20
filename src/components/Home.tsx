@@ -1,11 +1,12 @@
-import { DigiButton, DigiTypographyPreamble } from "@digi/arbetsformedlingen-react"
+import { TypographyHeadingJumboLevel } from "@digi/arbetsformedlingen";
+import { DigiButton, DigiTypography, DigiTypographyHeadingJumbo } from "@digi/arbetsformedlingen-react"
 import { Link } from "react-router-dom";
 
 export const Home = () => {
   return (
     <section className="startPage">
-        <h1>Matcha utbildning utifrån jobbtitel</h1>
-        <DigiTypographyPreamble>
+        <DigiTypography>
+          <DigiTypographyHeadingJumbo afText="Matcha utbildning utifrån jobbtitel" afLevel={TypographyHeadingJumboLevel.H2}></DigiTypographyHeadingJumbo>
           <p>
             Varmt välkommen!
           </p>
@@ -19,7 +20,7 @@ export const Home = () => {
             Klicka antingen på knappen nedan eller navigera med hjälp av ovanstående meny för att påbörja en sökning.
           </p>
           <DigiButton afVariation="primary"><Link to={'/search'}>Sök Utbildningar</Link></DigiButton>
-        </DigiTypographyPreamble>
+        </DigiTypography>
     </section>
   );
 };

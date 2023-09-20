@@ -49,9 +49,9 @@ export const ResultCardContainer = ({
       {search.educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
           <DigiTypography>
-            <h4>
+            <h3>
               {education.education.title[0].content} - {education.education.code}
-            </h4>
+            </h3>
           <DigiTypographyPreamble>{education.education.form.code}, {education.education.configuration.code}</DigiTypographyPreamble>
           </DigiTypography>
           <DigiButton onClick={() => getOccupations(education)}>

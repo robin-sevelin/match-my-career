@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { IEducation } from '../models/IEducation';
 import { AboutEducationView } from './AboutEducationView';
 import { DigiTypographyHeadingJumbo } from '@digi/arbetsformedlingen-react';
+import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
 
 export const ResultContainer = () => {
   const { search } = useContext(SearchContext);
@@ -16,7 +17,7 @@ export const ResultContainer = () => {
   return (
     <>
       {search.educations === null ? (
-        <DigiTypographyHeadingJumbo af-Level='h2' afText='Sökningen gav inget resultat'></DigiTypographyHeadingJumbo>
+        <DigiTypographyHeadingJumbo af-Level={TypographyHeadingJumboLevel.H4} afText='Sökningen gav inget resultat'></DigiTypographyHeadingJumbo>
       ) : (
         <div className='result'>
           <ResultCardContainer

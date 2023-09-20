@@ -144,3 +144,7 @@ footer p {
 .menu-select-container {
   width: 400px;
 }
+
+h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
+  font-size: 1.2em !important;
+}
