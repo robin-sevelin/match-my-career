@@ -6,6 +6,7 @@ import { ActionType } from '../reducers/SearchReducer';
 
 export const Search = () => {
   const { dispatch, search } = useContext(SearchContext);
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const response = await getEducations(search.searchText);
@@ -23,9 +24,6 @@ export const Search = () => {
           placeholder='jobb-titel'
           onChange={(e) => dispatch({type: ActionType.ADDED_SEARCH_TEXT, payload: e.target.value})}
         />
-        {/* <EducationForm />
-        <EducationType />
-        <Municipalities /> */}
         <button type='submit'>Sök</button>
       </form>
       <ResultContainer />

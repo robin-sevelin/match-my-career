@@ -7,7 +7,7 @@
 
 body {
   position: relative;
-  color: #1A1A1A;
+  color: #1a1a1a;
 }
 
 header {
@@ -15,7 +15,7 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: #526D82;
+  background-color: #526d82;
 }
 
 a {
@@ -30,7 +30,7 @@ a:hover {
 }
 
 a:visited {
-  color:#1A1A1A;
+  color: #1a1a1a;
 }
 
 li {
@@ -49,7 +49,7 @@ main {
   min-height: calc(100vh - 300px);
   margin: auto;
   margin-bottom: 100px;
-  background-color: #F7F7F8;
+  background-color: #f7f7f8;
 }
 
 footer {
@@ -57,7 +57,7 @@ footer {
   height: 100px;
   bottom: 0;
   position: relative;
-  background-color: #526D82;
+  background-color: #526d82;
   display: flex;
   justify-content: center;
 }
@@ -115,16 +115,15 @@ footer p {
   height: 500px;
 }
 
-
 .about-education-container {
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
   max-width: 700px;
-  overflow-y:scroll;
+  overflow-y: scroll;
   margin: 1rem;
 }
 
@@ -140,6 +139,8 @@ footer p {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-
 }
 
+.menu-select-container {
+  width: 400px;
+}

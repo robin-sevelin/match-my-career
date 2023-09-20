@@ -13,9 +13,7 @@ interface ResultCardContainerProps {
 export const ResultCardContainer = ({
   setSelectedEducation,
 }: ResultCardContainerProps) => {
-  const { dispatch } = useContext(SearchContext);
-  const searchResult = useContext(SearchContext);
-  const foundEducations = searchResult.search.educations;
+  const { dispatch, search } = useContext(SearchContext);
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
@@ -26,12 +24,21 @@ export const ResultCardContainer = ({
       type: ActionType.ADDED_OCCUPATIONS,
       payload: JSON.stringify(reponse),
     });
+
+    dispatch({
+      type: ActionType.SET_DISPLAYED_MENU,
+      payload: JSON.stringify(search),
+    });
   };
 
   const handleEducationClick = async (id: string) => {
     try {
       const response = await getEducationById(id);
       setSelectedEducation(response);
+      dispatch({
+        type: ActionType.SET_DISPLAYED_MENU,
+        payload: JSON.stringify(search),
+      });
     } catch (error) {
       console.error(error);
     }
@@ -39,7 +46,7 @@ export const ResultCardContainer = ({
 
   return (
     <div className='cardContainer'>
-      {foundEducations.map((education) => (
+      {search.educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
           <h4>
             {education.education.title[0].content} - {education.education.code}

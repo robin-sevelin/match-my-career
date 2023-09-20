@@ -22,8 +22,13 @@ export const ResultContainer = () => {
             selectedEducation={selectedEducation}
             setSelectedEducation={setSelectedEducation}
           />
-          <AboutEducationView education={selectedEducation} />
-          <OccupationsList />
+          <div className='menu-select-container'>
+            {search.showOccupation ? (
+              <OccupationsList />
+            ) : (
+              <AboutEducationView education={selectedEducation} />
+            )}
+          </div>
         </div>
       )}
     </>
