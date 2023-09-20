@@ -5,6 +5,8 @@ Therefore the group will work towards preventing and fixing the appearing issues
 
 ### Filip
 
+Today I will keep on working with the logic for rendering out additional information about the listed educations.
+
 ### Emilia
 
 Today I will work on creating a loader for the ResultCardContainer component. This will help keeping the search result in sync when updated.

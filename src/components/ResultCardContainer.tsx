@@ -1,3 +1,4 @@
+
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
@@ -5,8 +6,16 @@ import { ActionType } from '../reducers/SearchReducer';
 import { postMatchByText } from '../services/DataService';
 import { IEducation } from '../models/IEducation';
 
-export const ResultCardContainer = () => {
+interface ResultCardContainerProps {
+  selectedEducation: IEducation | null;
+  setSelectedEducation: (education: IEducation | null) => void;
+}
+
+
+export const ResultCardContainer = ({ setSelectedEducation }: ResultCardContainerProps) => {
   const { search, dispatch } = useContext(SearchContext);
+  const searchResult = useContext(SearchContext);
+  const foundEducations = searchResult.search.educations;
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
@@ -18,10 +27,23 @@ export const ResultCardContainer = () => {
       payload: JSON.stringify(reponse),
     });
   };
+  
+  
+  
+  const handleEducationClick = async (id: string) => {
+    try {
+      const response = await getEducationById(id);
+      setSelectedEducation(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <div className='cardContainer'>
-      {search.educations.map((education) => (
-        <div className='eduCard' key={education.education.identifier}>
+    
+    <div className="cardContainer">
+      {foundEducations.map((education) => (
+        <div className="eduCard" key={education.education.identifier}>
           <h4>
             {education.education.title[0].content} - {education.education.code}
           </h4>
@@ -32,9 +54,13 @@ export const ResultCardContainer = () => {
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken
           </DigiButton>
-          <DigiButton>Om Utbildningen</DigiButton>
+          <DigiButton onClick={() => handleEducationClick(education.id)}>
+            Om Utbildningen
+          </DigiButton>
         </div>
       ))}
     </div>
   );
+
 };
+
