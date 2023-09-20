@@ -1,9 +1,8 @@
-
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { ActionType } from '../reducers/SearchReducer';
-import { postMatchByText } from '../services/DataService';
+import { getEducationById, postMatchByText } from '../services/DataService';
 import { IEducation } from '../models/IEducation';
 
 interface ResultCardContainerProps {
@@ -11,9 +10,10 @@ interface ResultCardContainerProps {
   setSelectedEducation: (education: IEducation | null) => void;
 }
 
-
-export const ResultCardContainer = ({ setSelectedEducation }: ResultCardContainerProps) => {
-  const { search, dispatch } = useContext(SearchContext);
+export const ResultCardContainer = ({
+  setSelectedEducation,
+}: ResultCardContainerProps) => {
+  const { dispatch } = useContext(SearchContext);
   const searchResult = useContext(SearchContext);
   const foundEducations = searchResult.search.educations;
 
@@ -27,9 +27,7 @@ export const ResultCardContainer = ({ setSelectedEducation }: ResultCardContaine
       payload: JSON.stringify(reponse),
     });
   };
-  
-  
-  
+
   const handleEducationClick = async (id: string) => {
     try {
       const response = await getEducationById(id);
@@ -40,10 +38,9 @@ export const ResultCardContainer = ({ setSelectedEducation }: ResultCardContaine
   };
 
   return (
-    
-    <div className="cardContainer">
+    <div className='cardContainer'>
       {foundEducations.map((education) => (
-        <div className="eduCard" key={education.education.identifier}>
+        <div className='eduCard' key={education.education.identifier}>
           <h4>
             {education.education.title[0].content} - {education.education.code}
           </h4>
@@ -61,6 +58,4 @@ export const ResultCardContainer = ({ setSelectedEducation }: ResultCardContaine
       ))}
     </div>
   );
-
 };
-

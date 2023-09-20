@@ -20,7 +20,6 @@ export interface IEducation {
         content: string;
       }
     ];
-
   };
   text_enrichments_results: {
     enriched_candidates: {
@@ -28,53 +27,58 @@ export interface IEducation {
       occupations: string[];
       traits: string[];
 
-    subject: ISubject[];
-    form: {
-      code: string;
-      type: string;
+      subject: ISubject[];
+      form: {
+        code: string;
+        type: string;
+      };
     };
-  }
-  education_providers: [
-    {
-      identifier: string;
-      expires: string;
-      responsibleBody: [
-        {
-          lang: string;
-          content: string;
-        }
-      ];
-      emailAddress: string;
-      phone: [
-        {
-          number: string;
-        }
-      ];
-      name: [
-        {
-          lang: string;
-          content: string;
-        }
-      ];
-      urls: [
-        {
-          lang: string,
-          content: string,
-        }
-      ]
-    }
-  ];
-  events: [{
-    execution: {
-      start: string,
-      end: string,
-    },
-    paceOfStudyPercentage: number,
-    urls: [{
-      content: string
-    }];
-    provider: string,
-  }]
+    education_providers: [
+      {
+        identifier: string;
+        expires: string;
+        responsibleBody: [
+          {
+            lang: string;
+            content: string;
+          }
+        ];
+        emailAddress: string;
+        phone: [
+          {
+            number: string;
+          }
+        ];
+        name: [
+          {
+            lang: string;
+            content: string;
+          }
+        ];
+        urls: [
+          {
+            lang: string;
+            content: string;
+          }
+        ];
+      }
+    ];
+    events: [
+      {
+        execution: {
+          start: string;
+          end: string;
+        };
+        paceOfStudyPercentage: number;
+        urls: [
+          {
+            content: string;
+          }
+        ];
+        provider: string;
+      }
+    ];
+  };
 }
 
 export interface ISubject {
@@ -87,5 +91,3 @@ export interface ITitle {
   lang: string;
   content: string;
 }
-
-
