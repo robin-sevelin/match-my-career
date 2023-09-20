@@ -7,6 +7,7 @@ export class Search {
     public searchText: string,
     public educations: IEducation[],
     public occupations: IOccupation[],
-    public enchrichedOccupation: IEnrichedOccupation
+    public enchrichedOccupation: IEnrichedOccupation,
+    public showOccupation: boolean
   ) {}
 }
