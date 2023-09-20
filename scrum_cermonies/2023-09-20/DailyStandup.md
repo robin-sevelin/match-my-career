@@ -5,7 +5,7 @@ attend the daily meeting.
 
 ### Filip
 
-Today I will keep on working with the logic for rendering out additional information about the listed educations.
+Today I had a doctors appointment which kept me from our daily scrum meeting but the team had a meeting with me a bit later and now I will work on refactoring our IEducation interface and create a new one, moreover I will implement abouteducation to our reducer.
 
 ### Emilia
 
