@@ -7,6 +7,7 @@
 
 body {
   position: relative;
+  color: #1A1A1A;
 }
 
 header {
@@ -14,16 +15,28 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  background-color: #526D82;
 }
 
 a {
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-inline: 1rem;
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color:#1A1A1A;
 }
 
 li {
   float: left;
   list-style: none;
+  margin-top: 1em;
 }
 
 form {
@@ -36,6 +49,7 @@ main {
   min-height: calc(100vh - 300px);
   margin: auto;
   margin-bottom: 100px;
+  background-color: #F7F7F8;
 }
 
 footer {
@@ -43,6 +57,13 @@ footer {
   height: 100px;
   bottom: 0;
   position: relative;
+  background-color: #526D82;
+  display: flex;
+  justify-content: center;
+}
+
+footer p {
+  padding: 1em;
 }
 
 .occupations-container {
@@ -96,6 +117,7 @@ footer {
   margin-top: 15px;
 }
 
+
 .about-education-container {
   background-color: #EAEAEA;
   border-radius: 5px;
@@ -113,4 +135,12 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.loaderContainer {
+  width: 10em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
 }
