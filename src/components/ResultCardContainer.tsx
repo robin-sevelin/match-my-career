@@ -39,6 +39,11 @@ export const ResultCardContainer = ({
         type: ActionType.SET_DISPLAYED_MENU,
         payload: JSON.stringify(search),
       });
+
+      dispatch({
+        type: ActionType.SET_DISPLAYED_ABOUT_VIEW,
+        payload: JSON.stringify(search),
+      })
     } catch (error) {
       console.error(error);
     }

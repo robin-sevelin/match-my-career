@@ -14,6 +14,7 @@ export enum ActionType {
   ADDED_OCCUPATIONS,
   ADDED_ENRICHED_OCCUPATIONS,
   SET_DISPLAYED_MENU,
+  SET_DISPLAYED_ABOUT_VIEW
 }
 
 export const SearchReducer = (search: Search, action: ISearchAction) => {
@@ -44,6 +45,12 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
       const data = JSON.parse(action.payload) as Search;
 
       return { ...search, showOccupation: !data.showOccupation };
+    }
+
+    case ActionType.SET_DISPLAYED_ABOUT_VIEW: {
+      const data = JSON.parse(action.payload) as Search;
+
+      return { ...search, showAboutView: !data.showAboutView}
     }
 
     default:
