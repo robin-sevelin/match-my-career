@@ -58,5 +58,5 @@ export const postMatchByText = async (
 };
 
 export const getEducationById = async (id: string) => {
-  return await get(`${import.meta.env.VITE_BASE_URL}educations/${id}`);
+  return await get<IEducation>(`${import.meta.env.VITE_BASE_URL}educations/${id}`);
 };
