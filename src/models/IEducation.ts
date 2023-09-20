@@ -6,17 +6,28 @@ export interface IEducation {
       code: string;
       type: string;
     };
-    description:[
-      { lang: string, 
-        content: string 
-      }],
     identifier: string;
-    title: [
+    title: ITitle[];
+    subject: ISubject[];
+
+    form: {
+      code: string;
+      type: string;
+    };
+    description: [
       {
         lang: string;
         content: string;
       }
     ];
+
+  };
+  text_enrichments_results: {
+    enriched_candidates: {
+      competencies: string[];
+      occupations: string[];
+      traits: string[];
+
     subject: ISubject[];
     form: {
       code: string;
@@ -67,11 +78,14 @@ export interface IEducation {
 }
 
 export interface ISubject {
-  subject: [
-    {
-      code: string;
-      name: string;
-      type: string;
-    }
-  ];
+  code: string;
+  name: string;
+  type: string;
 }
+
+export interface ITitle {
+  lang: string;
+  content: string;
+}
+
+

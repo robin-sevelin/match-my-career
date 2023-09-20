@@ -1,25 +1,33 @@
-import { DigiButton } from '@digi/arbetsformedlingen-react';
+import { useContext } from 'react';
 import { IOccupation } from '../models/IRelatedOccupations';
+import { getEnrichedOccupations } from '../services/DataService';
+import { SearchContext } from '../contexts/SearchContext';
+import { ActionType } from '../reducers/SearchReducer';
+import { Link } from 'react-router-dom';
 
 interface IOccupationViewProps {
   occupation: IOccupation;
-  onHandleClick: (id: string) => void;
 }
 
-export const OccupationView = ({
-  occupation,
-  onHandleClick,
-}: IOccupationViewProps) => {
-  const handleClick = (id: string) => {
-    onHandleClick(id);
+export const OccupationView = ({ occupation }: IOccupationViewProps) => {
+  const { dispatch } = useContext(SearchContext);
+  const handleClick = async (occupation: IOccupation) => {
+    const response = await getEnrichedOccupations(occupation.id);
+
+    dispatch({
+      type: ActionType.ADDED_ENRICHED_OCCUPATIONS,
+      payload: JSON.stringify(response),
+    });
   };
 
   return (
-    <div className='occupation-card'>
-      {occupation.occupation_label}
-      <DigiButton onClick={() => handleClick(occupation.id)}>
-        Kompetenser
-      </DigiButton>
-    </div>
+    <>
+      <div className='occupation-card' onClick={() => handleClick(occupation)}>
+        {occupation.occupation_label}
+        <button>
+          <Link to={'/skillchart'}>kompetenser</Link>
+        </button>
+      </div>
+    </>
   );
 };

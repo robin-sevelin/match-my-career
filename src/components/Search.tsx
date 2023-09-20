@@ -33,7 +33,6 @@ export const Search = () => {
           placeholder='jobb-titel'
           onChange={(e) => setInput(e.target.value)}
         />
-
         {/* <EducationForm />
         <EducationType />
         <Municipalities /> */}

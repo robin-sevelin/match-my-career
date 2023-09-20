@@ -66,28 +66,16 @@ footer p {
   padding: 1em;
 }
 
+.result {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  gap: 1rem;
+}
+
+.cardContainer,
 .occupations-container {
-  max-width: 1300px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: auto;
-}
-
-.occupation-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-  color: black;
-  background-color: lightblue;
-}
-
-.cardContainer {
-  background-color: #EAEAEA;
+  background-color: #eaeaea;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -97,24 +85,34 @@ footer p {
   overflow-y: scroll;
 }
 
-.eduCard {
+.eduCard,
+.occupation-card {
   border-radius: 5px;
-  background-color: #F4F4F4;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.10);
+  background-color: #f4f4f4;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin: 0.7rem;
   width: 430px;
   text-transform: capitalize;
 }
 
-.eduCard h4, .eduCard p {
+.eduCard,
+.occupation-card h4,
+.eduCard,
+.occupation-card p {
   margin-bottom: 1rem;
 }
 
-.eduCard button {
+.eduCard,
+.occupation-card button {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 15px;
+}
+
+.competencies {
+  margin-top: 1rem;
+  height: 500px;
 }
 
 
@@ -144,3 +142,4 @@ footer p {
   justify-content: center;
 
 }
+

@@ -11,8 +11,9 @@ function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
     'search',
     new Search('', [], [], {
-      occupationLabel: '',
-      metadata: { competencies: [{ term: '', percent_for_occupation: '' }] },
+      id: '',
+      occupation_label: '',
+      metadata: { competencies: [] },
     })
   );
 

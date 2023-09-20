@@ -9,8 +9,9 @@ export interface ISearchContext {
 
 export const SearchContext = createContext<ISearchContext>({
   search: new Search('', [], [], {
-    occupationLabel: '',
-    metadata: { competencies: [{ term: '', percent_for_occupation: '' }] },
+    id: '',
+    occupation_label: '',
+    metadata: { competencies: [] },
   }),
   dispatch: () => {},
 });

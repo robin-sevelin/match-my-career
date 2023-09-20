@@ -1,5 +1,5 @@
 import { IEducation } from './IEducation';
-import { IEnrichedOccupations } from './IEncrichedOccupations';
+import { IEnrichedOccupation } from './IEnrichedOccupation';
 import { IOccupation } from './IRelatedOccupations';
 
 export class Search {
@@ -7,6 +7,6 @@ export class Search {
     public searchText: string,
     public educations: IEducation[],
     public occupations: IOccupation[],
-    public enrichedOccupations: IEnrichedOccupations
+    public enchrichedOccupation: IEnrichedOccupation
   ) {}
 }
