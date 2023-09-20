@@ -11,7 +11,9 @@ export const SearchContext = createContext<ISearchContext>({
   search: new Search('', [], [], {
     id: '',
     occupation_label: '',
-    metadata: { competencies: [] },
+    metadata: { enriched_candidates_term_frequency: {
+      competencies: []
+    }},
   }),
   dispatch: () => {},
 });
