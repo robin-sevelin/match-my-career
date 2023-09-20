@@ -25,11 +25,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+li a:hover {
   text-decoration: underline;
 }
 
-a:visited {
+li a:visited {
   color: #1a1a1a;
 }
 
