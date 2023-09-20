@@ -1,37 +1,60 @@
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { Link } from 'react-router-dom';
-import { DigiLoaderSpinner } from '@digi/arbetsformedlingen-react';
+import { DigiBarChart } from '@digi/arbetsformedlingen-react';
+import { ChartLineData } from '../models/ChartLineData';
+import { ChartLineSeries } from '@digi/arbetsformedlingen';
 
 export const EnrichedOccupations = () => {
   const { search } = useContext(SearchContext);
 
-  const newArray = [];
+  const competencies = [];
+  const percent = [];
 
-  for (let i = 0; i < 20; i++) {
-    newArray.push(
+  for (let i = 0; i < 10; i++) {
+    competencies.push(
       search.enchrichedOccupation.metadata.enriched_candidates_term_frequency
-        .competencies[i]
+        .competencies[i].term
+    );
+    percent.push(
+      search.enchrichedOccupation.metadata.enriched_candidates_term_frequency
+        .competencies[i].percent_for_occupation
     );
   }
 
+  const charline: ChartLineSeries[] = [
+    { yValues: percent, title: 'mitt diagram', colorToken: 'green' },
+  ];
+
+  const chartData: ChartLineData = {
+    data: {
+      xValues: competencies,
+      series: charline,
+      xValueNames: competencies,
+    },
+    x: 'procent',
+    y: 'kompetens',
+    title: 'kompetensediagram',
+    infoText: 'inget',
+    meta: {
+      numberOfReferenceLines: 10,
+      percentage: true,
+      hideXAxis: false,
+      valueLabels: true,
+      labelProperties: {
+        significantDigits: 10,
+        shortHand: false,
+      },
+    },
+  };
+
   return (
     <>
-      {newArray ? (
-        <div className='competencies'>
-          <h2>{search.enchrichedOccupation.occupation_label}</h2>
-          <h3>Passande kompetenser</h3>
-          {newArray.map((item, index) => (
-            <div key={index}>{item.term}</div>
-          ))}
-        </div>
-      ) : (
-        <DigiLoaderSpinner></DigiLoaderSpinner>
-      )}
-
       <button>
         <Link to={'/search'}>Tillbaka</Link>
       </button>
+
+      <DigiBarChart afChartData={chartData}></DigiBarChart>
     </>
   );
 };
