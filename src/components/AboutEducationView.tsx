@@ -1,7 +1,7 @@
-import { IEducation } from "../models/IEducation";
+import { IAboutEducation } from "../models/IAboutEducation";
 
 interface AboutEducationViewProps {
-  education: IEducation | null;
+  education: IAboutEducation | null;
 }
 
 export const AboutEducationView = ({ education }: AboutEducationViewProps) => {
