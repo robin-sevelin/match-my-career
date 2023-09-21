@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { Link } from 'react-router-dom';
-import { DigiBarChart } from '@digi/arbetsformedlingen-react';
+import { DigiBarChart, DigiButton } from '@digi/arbetsformedlingen-react';
 import { ChartLineData } from '../models/ChartLineData';
 import { ChartLineSeries } from '@digi/arbetsformedlingen';
 
@@ -50,10 +50,10 @@ export const EnrichedOccupations = () => {
 
   return (
     <>
-      <button>
+      <DigiButton>
         <Link to={'/search'}>Tillbaka</Link>
-      </button>
-
+      </DigiButton>
+      
       <DigiBarChart afChartData={chartData}></DigiBarChart>
     </>
   );

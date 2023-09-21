@@ -25,11 +25,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+li a:hover {
   text-decoration: underline;
 }
 
-a:visited {
+li a:visited {
   color: #1a1a1a;
 }
 
@@ -148,4 +148,8 @@ footer p {
 
 .menu-select-container {
   width: 400px;
+}
+
+h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
+  font-size: 1.2em !important;
 }
