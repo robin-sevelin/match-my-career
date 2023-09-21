@@ -9,7 +9,6 @@ export interface IEducation {
     identifier: string;
     title: ITitle[];
     subject: ISubject[];
-
     form: {
       code: string;
       type: string;
@@ -33,51 +32,6 @@ export interface IEducation {
         type: string;
       };
     };
-    education_providers: [
-      {
-        identifier: string;
-        expires: string;
-        responsibleBody: [
-          {
-            lang: string;
-            content: string;
-          }
-        ];
-        emailAddress: string;
-        phone: [
-          {
-            number: string;
-          }
-        ];
-        name: [
-          {
-            lang: string;
-            content: string;
-          }
-        ];
-        urls: [
-          {
-            lang: string;
-            content: string;
-          }
-        ];
-      }
-    ];
-    events: [
-      {
-        execution: {
-          start: string;
-          end: string;
-        };
-        paceOfStudyPercentage: number;
-        urls: [
-          {
-            content: string;
-          }
-        ];
-        provider: string;
-      }
-    ];
   };
 }
 
