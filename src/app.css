@@ -25,11 +25,11 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+li a:hover {
   text-decoration: underline;
 }
 
-a:visited {
+li a:visited {
   color: #1a1a1a;
 }
 
@@ -122,10 +122,15 @@ footer p {
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  max-width: 700px;
-  overflow-y: scroll;
   margin: 1rem;
+  max-width: 700px;
+  overflow:scroll;
 }
+
+.about-education-container div {
+  margin: 2rem;
+}
+
 
 .result {
   display: flex;
@@ -154,4 +159,8 @@ footer p {
 
 .chart {
   background-color: var(--digi--global--color--neutral--grayscale--base);
+}
+
+h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
+  font-size: 1.2em !important;
 }

@@ -30,6 +30,11 @@ export const ResultCardContainer = ({
     try {
       const response = await getEducationById(id);
       setSelectedEducation(response);
+
+      dispatch({
+        type: ActionType.SET_DISPLAYED_ABOUT_VIEW,
+        payload: JSON.stringify(response),
+      });
     } catch (error) {
       console.error(error);
     }
