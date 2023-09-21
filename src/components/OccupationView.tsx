@@ -4,6 +4,8 @@ import { getEnrichedOccupations } from '../services/DataService';
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
 import { Link } from 'react-router-dom';
+import { DigiButton, DigiTypography, DigiTypographyHeadingJumbo } from '@digi/arbetsformedlingen-react';
+import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
 
 interface IOccupationViewProps {
   occupation: IOccupation;
@@ -23,10 +25,12 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
   return (
     <>
       <div className='occupation-card' onClick={() => handleClick(occupation)}>
-        {occupation.occupation_label}
-        <button>
-          <Link to={'/skillchart'}>kompetenser</Link>
-        </button>
+        <DigiTypography>
+          <DigiTypographyHeadingJumbo afText={occupation.occupation_label} afLevel={TypographyHeadingJumboLevel.H4}></DigiTypographyHeadingJumbo>
+        </DigiTypography>
+        <DigiButton>
+          <Link to={'/skillchart'}>Kompetenser</Link>
+        </DigiButton>
       </div>
     </>
   );
