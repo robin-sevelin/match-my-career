@@ -2,6 +2,7 @@ import { DigiTypography } from "@digi/arbetsformedlingen-react";
 import { IAboutEducation } from "../models/IAboutEducation";
 import { TypographyVariation } from "@digi/arbetsformedlingen";
 
+
 interface AboutEducationViewProps {
   education: IAboutEducation | null;
 }

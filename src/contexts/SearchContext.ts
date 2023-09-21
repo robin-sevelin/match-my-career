@@ -17,6 +17,7 @@ export const SearchContext = createContext<ISearchContext>({
       occupation_label: '',
       metadata: { enriched_candidates_term_frequency: { competencies: [] } },
     },
+    true,
     true
   ),
   dispatch: () => {},
