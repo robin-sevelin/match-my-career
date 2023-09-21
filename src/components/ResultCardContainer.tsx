@@ -24,21 +24,12 @@ export const ResultCardContainer = ({
       type: ActionType.ADDED_OCCUPATIONS,
       payload: JSON.stringify(reponse),
     });
-
-    dispatch({
-      type: ActionType.SET_DISPLAYED_MENU,
-      payload: JSON.stringify(search),
-    });
   };
 
   const handleEducationClick = async (id: string) => {
     try {
       const response = await getEducationById(id);
       setSelectedEducation(response);
-      dispatch({
-        type: ActionType.SET_DISPLAYED_MENU,
-        payload: JSON.stringify(search),
-      });
     } catch (error) {
       console.error(error);
     }
