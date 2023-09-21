@@ -13,7 +13,6 @@ export enum ActionType {
   ADDED_EDUCATIONS,
   ADDED_OCCUPATIONS,
   ADDED_ENRICHED_OCCUPATIONS,
-  SET_DISPLAYED_MENU,
   SET_DISPLAYED_ABOUT_VIEW
 }
 
@@ -41,16 +40,10 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
       return { ...search, enchrichedOccupation: data };
     }
 
-    case ActionType.SET_DISPLAYED_MENU: {
-      const data = JSON.parse(action.payload) as Search;
-
-      return { ...search, showOccupation: !data.showOccupation };
-    }
-
     case ActionType.SET_DISPLAYED_ABOUT_VIEW: {
-      const data = JSON.parse(action.payload) as Search;
+      const data = JSON.parse(action.payload) as IEducation;
 
-      return { ...search, showAboutView: !data.showAboutView}
+      return { ...search, showAboutView: data}
     }
 
     default:

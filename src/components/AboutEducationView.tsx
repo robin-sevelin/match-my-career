@@ -4,7 +4,7 @@ import { TypographyVariation } from "@digi/arbetsformedlingen";
 
 
 interface AboutEducationViewProps {
-  education: IAboutEducation | null;
+  education: IAboutEducation;
 }
 
 export const AboutEducationView = ({ education }: AboutEducationViewProps) => {
