@@ -1,8 +1,8 @@
 ### Daily standup
 
-Today Emilia and Robin resolved and merged yesterday's pull requests. Afterwards the team went trough the application logic together as well as
-creating new issues to improve the application performace. The group will keep in contact with updates thorugh Teams since Filip couldn't
-attend the daily meeting.
+Today the group reviewed and merged a few PR's. The members also created a temporary bug fix for AboutEducationView. 
+Afterwards the group discussed and filled in Retrospective. The Retrospective can be found in scrum_cermonies/2023-09-21.
+Together the group concluded a refreshment on the design as well as component rendering, therefore that will be the main focus today.
 
 ### Filip
 
@@ -10,7 +10,7 @@ Today I had a doctors appointment which kept me from our daily scrum meeting but
 
 ### Emilia
 
-Today I have been working on keeping the rendering of the search results synchronized. Additionally I will start implementing more digi-components to our project.
+Today I will start reworking the rendering of our search result components. Instead of conditional rendering, routing will be used to display the different components.
 
 ### Robin
 
