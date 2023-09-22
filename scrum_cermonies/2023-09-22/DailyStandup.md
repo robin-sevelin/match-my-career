@@ -13,4 +13,4 @@ Today I will start reworking the rendering of our search result components. Inst
 
 ### Robin
 
-Today me Filip started on a new design for the project, i added a custom hook for the chart data logic.
+Today i will start with the design for the occupation page.
