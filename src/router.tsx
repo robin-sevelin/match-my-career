@@ -4,6 +4,8 @@ import { Home } from './components/Home';
 import { educationLoader } from './loaders/educationLoader';
 import { Search } from './components/Search';
 import { EnrichedOccupations } from './components/EnrichedOccupations';
+import { AboutEducationView } from './components/AboutEducationView';
+import { OccupationsList } from './components/OccupationsList';
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ export const router = createBrowserRouter([
         path: '/skillchart',
         element: <EnrichedOccupations />,
       },
+      {
+        path: '/abouteducation',
+        element: <AboutEducationView />
+      },
+      {
+        path: '/occupations',
+        element: <OccupationsList />
+      }
     ],
   },
 ]);

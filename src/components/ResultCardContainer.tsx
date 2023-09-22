@@ -4,6 +4,7 @@ import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { ActionType } from '../reducers/SearchReducer';
 import { getEducationById, postMatchByText } from '../services/DataService';
 import { IEducation } from '../models/IEducation';
+import { useNavigate } from 'react-router-dom';
 
 interface ResultCardContainerProps {
   selectedEducation: IEducation | null;
@@ -14,6 +15,7 @@ export const ResultCardContainer = ({
   setSelectedEducation,
 }: ResultCardContainerProps) => {
   const { dispatch, search } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
@@ -24,6 +26,8 @@ export const ResultCardContainer = ({
       type: ActionType.ADDED_OCCUPATIONS,
       payload: JSON.stringify(reponse),
     });
+
+    navigate('/occupations');
   };
 
   const handleEducationClick = async (id: string) => {
@@ -38,6 +42,8 @@ export const ResultCardContainer = ({
     } catch (error) {
       console.error(error);
     }
+
+    navigate('/abouteducation');
   };
 
   return (

@@ -1,15 +1,20 @@
 import { DigiTypography } from '@digi/arbetsformedlingen-react';
-import { IAboutEducation } from '../models/IAboutEducation';
 import { TypographyVariation } from '@digi/arbetsformedlingen';
+import { useContext } from 'react';
+import { SearchContext } from '../contexts/SearchContext';
 
-interface AboutEducationViewProps {
-  education: IAboutEducation;
-}
 
-export const AboutEducationView = ({ education }: AboutEducationViewProps) => {
+export const AboutEducationView = () => {
+  const {search} = useContext(SearchContext);
+  const education = search.showAboutView;  
+
   return (
     <DigiTypography afVariation={TypographyVariation.SMALL}>
       <div className='about-education-container'>
+        <p>
+          {education.education.title[0].content}
+        </p>
+       {/*
         {education &&
           education.education.description &&
           education.education.description.length > 0 && (
@@ -61,6 +66,7 @@ export const AboutEducationView = ({ education }: AboutEducationViewProps) => {
               </div>
             </div>
           )}
+       */} 
       </div>
     </DigiTypography>
   );
