@@ -1,12 +1,12 @@
 ### Daily standup
 
-Today the group reviewed and merged a few PR's. The members also created a temporary bug fix for AboutEducationView. 
+Today the group reviewed and merged a few PR's. The members also created a temporary bug fix for AboutEducationView.
 Afterwards the group discussed and filled in Retrospective. The Retrospective can be found in scrum_cermonies/2023-09-21.
 Together the group concluded a refreshment on the design as well as component rendering, therefore that will be the main focus today.
 
 ### Filip
 
-Today I had a doctors appointment which kept me from our daily scrum meeting but the team had a meeting with me a bit later and now I will work on refactoring our IEducation interface and create a new one, moreover I will implement abouteducation to our reducer.
+Today me and Robin will redo some of our design work for our project, when we are satisfied with the result we will implement the styling to each of our pages in the project.
 
 ### Emilia
 
@@ -14,4 +14,4 @@ Today I will start reworking the rendering of our search result components. Inst
 
 ### Robin
 
-Today i will add routing to our occupation and about education page.
+Today me Filip started on a new design for the project, i added a custom hook for the chart data logic.
