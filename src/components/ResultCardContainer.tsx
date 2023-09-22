@@ -1,9 +1,10 @@
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-import { DigiButton, DigiTypography, DigiTypographyPreamble } from '@digi/arbetsformedlingen-react';
+import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { ActionType } from '../reducers/SearchReducer';
 import { getEducationById, postMatchByText } from '../services/DataService';
 import { IEducation } from '../models/IEducation';
+import { useNavigate } from 'react-router-dom';
 
 interface ResultCardContainerProps {
   selectedEducation: IEducation | null;
@@ -14,6 +15,7 @@ export const ResultCardContainer = ({
   setSelectedEducation,
 }: ResultCardContainerProps) => {
   const { dispatch, search } = useContext(SearchContext);
+  const navigate = useNavigate();
 
   const getOccupations = async (education: IEducation) => {
     const reponse = await postMatchByText(
@@ -24,6 +26,8 @@ export const ResultCardContainer = ({
       type: ActionType.ADDED_OCCUPATIONS,
       payload: JSON.stringify(reponse),
     });
+
+    navigate('/occupations');
   };
 
   const handleEducationClick = async (id: string) => {
@@ -34,22 +38,25 @@ export const ResultCardContainer = ({
       dispatch({
         type: ActionType.SET_DISPLAYED_ABOUT_VIEW,
         payload: JSON.stringify(response),
-      })
+      });
     } catch (error) {
       console.error(error);
     }
+
+    navigate('/abouteducation');
   };
 
   return (
     <div className='cardContainer'>
       {search.educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
-          <DigiTypography>
-            <h3>
-              {education.education.title[0].content} - {education.education.code}
-            </h3>
-          <DigiTypographyPreamble>{education.education.form.code}, {education.education.configuration.code}</DigiTypographyPreamble>
-          </DigiTypography>
+          <h4>
+            {education.education.title[0].content} - {education.education.code}
+          </h4>
+          <p>
+            {education.education.form.code},
+            {education.education.configuration.code}
+          </p>
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken
           </DigiButton>

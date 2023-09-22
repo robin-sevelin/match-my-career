@@ -147,7 +147,18 @@ footer p {
 }
 
 .menu-select-container {
-  width: 400px;
+  width: 500px;
+}
+
+.chart-container {
+  padding: 1rem;
+  margin: auto;
+  max-width: 900px;
+  height: 600px;
+}
+
+.chart {
+  background-color: var(--digi--global--color--neutral--grayscale--base);
 }
 
 h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
