@@ -13,15 +13,9 @@ export const AboutEducationView = () => {
   return (
     <DigiTypography 
     afVariation={TypographyVariation.SMALL}>
-      <DigiButton 
-      className='back-btn'
-      afVariation={ButtonVariation.SECONDARY}>
-        <Link to={'/search'}>Tillbaka</Link>
-      </DigiButton>
       <div 
       className='about-education-container' 
       key={education.id}>
-        <div>
           <DigiTypographyHeadingJumbo
           afText={education.education.title[0].content}
           afLevel={TypographyHeadingJumboLevel.H2}>
@@ -42,8 +36,6 @@ export const AboutEducationView = () => {
             <strong>Beskrivning: </strong>
             {education.education.description[0].content}
           </p>
-        </div>
-        <div>
           <h3>Utbildningssamordnare: </h3>
           <p>
             {education.education_providers[0].name[0].content}
@@ -51,8 +43,6 @@ export const AboutEducationView = () => {
           <p>
             {education.education_providers[0].urls[0].content}
           </p>
-        </div>
-        <div>
           <h3>Utbildningstillfällen: </h3>
           <p>
             <strong>Startdatum: </strong>
@@ -76,7 +66,12 @@ export const AboutEducationView = () => {
               {education.events[0].paceOfStudyPercentage} %
           </p>
         </div>
-      </div>
+        <div className='back-btn-div'>
+        <DigiButton 
+          afVariation={ButtonVariation.SECONDARY}>
+        <Link to={'/search'}>Tillbaka</Link>
+        </DigiButton>
+        </div>
     </DigiTypography>
   );
 };
