@@ -19,11 +19,16 @@ export const OccupationsList = () => {
           </span>
         </h3>
       </div>
-      {search.occupations.map((occupation) => (
-        <div key={occupation.id}>
-          <OccupationView occupation={occupation} />
-        </div>
-      ))}
+      {search.occupations.length !== 0 ? (
+        search.occupations.map((occupation) => (
+          <div key={occupation.id}>
+            <OccupationView occupation={occupation} />
+          </div>
+        ))
+      ) : (
+        <p>Hittade tyvärr inget matchande yrke</p>
+      )}
+
       <div className='navigate-container'>
         <DigiButton onAfOnClick={() => navigate('/search')}>
           Tillbaka

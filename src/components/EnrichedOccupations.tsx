@@ -1,20 +1,22 @@
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { DigiBarChart, DigiButton } from '@digi/arbetsformedlingen-react';
 import { useGraphData } from '../hooks/useGraphData';
 
 export const EnrichedOccupations = () => {
   const { search } = useContext(SearchContext);
   const { chartData } = useGraphData(search);
+  const navigate = useNavigate();
 
   return (
-    <>
-      <DigiButton>
-        <Link to={'/search'}>Tillbaka</Link>
-      </DigiButton>
-
+    <div className='chart-container'>
       <DigiBarChart afChartData={chartData}></DigiBarChart>
-    </>
+      <div className='navigate-container'>
+        <DigiButton onAfOnClick={() => navigate('/occupations')}>
+          Tillbaka
+        </DigiButton>
+      </div>
+    </div>
   );
 };
