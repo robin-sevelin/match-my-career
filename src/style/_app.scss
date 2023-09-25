@@ -1,6 +1,16 @@
 @import './normalize';
 @import './occupationPage/occupations';
 @import './chartpage/chart';
+
+:root {
+  --orange: #EF7B22;
+  --grey: #9F9D9C;
+  --white: #F6F3EE;
+  --brown: #916F50;
+  --dark: #242327;
+  --red: #E54236;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -114,6 +124,7 @@ button {
   height: 500px;
 }
 
+
 .about-education-container {
   background-color: #eaeaea;
   border-radius: 5px;
@@ -129,6 +140,8 @@ button {
 .about-education-container div {
   margin: 2rem;
 }
+
+
 
 .result {
   display: flex;
@@ -158,3 +171,16 @@ button {
 h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   font-size: 1.2em !important;
 }
+
+
+
+.digi-button--variation-primary {
+  background-color: var(--orange) !important;
+  color: var(--white) !important
+}
+
+.digi-button--variation-secondary {
+  background-color: var(--grey) !important;
+  color: var(--white) !important
+}
+
