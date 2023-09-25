@@ -84,7 +84,6 @@ footer p {
   height: 500px;
 }
 
-
 .about-education-container {
   background-color: #eaeaea;
   border-radius: 5px;
@@ -99,15 +98,6 @@ footer p {
 
 .about-education-container div {
   margin: 2rem;
-}
-
-
-
-.result {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
 }
 
 .loaderContainer {
@@ -131,8 +121,6 @@ footer p {
 h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   font-size: 1.2em !important;
 }
-
-
 
 .digi-button--variation-primary {
   background-color: var(--orange) !important;
