@@ -44,22 +44,6 @@
         width: 100px;
       }
     }
-    .button-container {
-      button {
-        position: relative;
-        top: 2px;
-        background-color: #ef7b22;
-        border: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      button:hover {
-        background-color: #a05419;
-        border: none;
-      }
-    }
   }
 }
 
@@ -69,7 +53,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  button {
-    background-color: red;
-  }
 }

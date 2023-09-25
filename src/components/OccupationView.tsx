@@ -42,7 +42,10 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
           </DigiTypography>
         </div>
         <div className='button-container'>
-          <DigiButton class='back' onAfOnClick={() => handleClick(occupation)}>
+          <DigiButton
+            afVariation='primary'
+            onAfOnClick={() => handleClick(occupation)}
+          >
             Kompetenser
           </DigiButton>
         </div>

@@ -13,7 +13,10 @@ export const EnrichedOccupations = () => {
     <div className='chart-container'>
       <DigiBarChart afChartData={chartData}></DigiBarChart>
       <div className='navigate-container'>
-        <DigiButton onAfOnClick={() => navigate('/occupations')}>
+        <DigiButton
+          afVariation='secondary'
+          onAfOnClick={() => navigate('/occupations')}
+        >
           Tillbaka
         </DigiButton>
       </div>

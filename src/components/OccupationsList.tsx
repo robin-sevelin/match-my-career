@@ -33,7 +33,10 @@ export const OccupationsList = () => {
       )}
 
       <div className='navigate-container'>
-        <DigiButton onAfOnClick={() => navigate('/search')}>
+        <DigiButton
+          afVariation='secondary'
+          onAfOnClick={() => navigate('/search')}
+        >
           Tillbaka
         </DigiButton>
       </div>
