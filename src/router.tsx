@@ -27,12 +27,12 @@ export const router = createBrowserRouter([
       },
       {
         path: '/abouteducation',
-        element: <AboutEducationView />
+        element: <AboutEducationView />,
       },
       {
         path: '/occupations',
-        element: <OccupationsList />
-      }
+        element: <OccupationsList />,
+      },
     ],
   },
 ]);

@@ -2,47 +2,26 @@ import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { ActionType } from '../reducers/SearchReducer';
-import { getEducationById, postMatchByText } from '../services/DataService';
 import { IEducation } from '../models/IEducation';
 import { useNavigate } from 'react-router-dom';
 
-interface ResultCardContainerProps {
-  selectedEducation: IEducation | null;
-  setSelectedEducation: (education: IEducation | null) => void;
-}
-
-export const ResultCardContainer = ({
-  setSelectedEducation,
-}: ResultCardContainerProps) => {
+export const ResultCardContainer = () => {
   const { dispatch, search } = useContext(SearchContext);
   const navigate = useNavigate();
 
   const getOccupations = async (education: IEducation) => {
-    const reponse = await postMatchByText(
-      education.text_enrichments_results.enriched_candidates.competencies[0],
-      education.education.description[0].content
-    );
     dispatch({
       type: ActionType.ADDED_OCCUPATIONS,
-      payload: JSON.stringify(reponse),
+      payload: JSON.stringify(education),
     });
-
     navigate('/occupations');
   };
 
-  const handleEducationClick = async (id: string) => {
-    try {
-      const response = await getEducationById(id);
-      setSelectedEducation(response);
-
-      dispatch({
-        type: ActionType.SET_DISPLAYED_ABOUT_VIEW,
-        payload: JSON.stringify(response),
-      });
-    } catch (error) {
-      console.error(error);
-    }
-
+  const getEducation = async (education: IEducation) => {
+    dispatch({
+      type: ActionType.ADDED_ABOUT_EDUCATION,
+      payload: JSON.stringify(education),
+    });
     navigate('/abouteducation');
   };
 
@@ -60,7 +39,7 @@ export const ResultCardContainer = ({
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken
           </DigiButton>
-          <DigiButton onClick={() => handleEducationClick(education.id)}>
+          <DigiButton onClick={() => getEducation(education)}>
             Om Utbildningen
           </DigiButton>
         </div>

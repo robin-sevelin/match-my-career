@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { IOccupation } from '../models/IRelatedOccupations';
-import { getEnrichedOccupations } from '../services/DataService';
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
 
@@ -20,11 +19,9 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
   const { dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
   const handleClick = async (occupation: IOccupation) => {
-    const response = await getEnrichedOccupations(occupation.id);
-
     dispatch({
       type: ActionType.ADDED_ENRICHED_OCCUPATIONS,
-      payload: JSON.stringify(response),
+      payload: JSON.stringify(occupation),
     });
 
     navigate('/skillchart');

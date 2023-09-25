@@ -1,25 +1,29 @@
 import { RouterProvider } from 'react-router-dom';
 import { router } from './router';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import { SearchReducer } from './reducers/SearchReducer';
 import { SearchContext } from './contexts/SearchContext';
 import { Search } from './models/Search';
-import { useLocalStorage } from './hooks/useStorage';
 import { useGetSearch } from './hooks/useGetSearch';
+import {
+  aboutEducationBaseValues,
+  enchrichedOccupationBaseValues,
+} from './models/initialValues';
 
 function App() {
-  const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
-    'search',
-    new Search('', [], [], {
-      id: '',
-      occupation_label: '',
-      metadata: { enriched_candidates_term_frequency: { competencies: [] } },
-    })
+  const [emptySearch, setEmptySearch] = useState<Search>(
+    new Search(
+      '',
+      [],
+      [],
+      enchrichedOccupationBaseValues,
+      aboutEducationBaseValues
+    )
   );
 
-  const [search, dispatch] = useReducer(SearchReducer, storedSearch);
+  const [search, dispatch] = useReducer(SearchReducer, emptySearch);
 
-  useGetSearch(search, setStoredSearch);
+  useGetSearch(search, setEmptySearch);
   return (
     <>
       <SearchContext.Provider value={{ search, dispatch }}>

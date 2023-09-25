@@ -1,6 +1,10 @@
 import { Dispatch, createContext } from 'react';
 import { ISearchAction } from '../reducers/SearchReducer';
 import { Search } from '../models/Search';
+import {
+  aboutEducationBaseValues,
+  enchrichedOccupationBaseValues,
+} from '../models/initialValues';
 
 export interface ISearchContext {
   search: Search;
@@ -8,10 +12,12 @@ export interface ISearchContext {
 }
 
 export const SearchContext = createContext<ISearchContext>({
-  search: new Search('', [], [], {
-    id: '',
-    occupation_label: '',
-    metadata: { enriched_candidates_term_frequency: { competencies: [] } },
-  }),
+  search: new Search(
+    '',
+    [],
+    [],
+    enchrichedOccupationBaseValues,
+    aboutEducationBaseValues
+  ),
   dispatch: () => {},
 });

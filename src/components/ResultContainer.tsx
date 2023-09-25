@@ -1,16 +1,11 @@
 import { useContext } from 'react';
 import { ResultCardContainer } from './ResultCardContainer';
 import { SearchContext } from '../contexts/SearchContext';
-import { useState } from 'react';
-import { IEducation } from '../models/IEducation';
 import { DigiTypographyHeadingJumbo } from '@digi/arbetsformedlingen-react';
 import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
 
 export const ResultContainer = () => {
   const { search } = useContext(SearchContext);
-  const [selectedEducation, setSelectedEducation] = useState<IEducation | null>(
-    null
-  );
 
   return (
     <>
@@ -21,10 +16,7 @@ export const ResultContainer = () => {
         ></DigiTypographyHeadingJumbo>
       ) : (
         <div className='result'>
-          <ResultCardContainer
-            selectedEducation={selectedEducation}
-            setSelectedEducation={setSelectedEducation}
-          />
+          <ResultCardContainer />
         </div>
       )}
     </>

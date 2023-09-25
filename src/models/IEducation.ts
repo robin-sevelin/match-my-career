@@ -34,6 +34,35 @@ export interface IEducation {
       };
     };
   };
+  education_providers: [
+    {
+      urls: [
+        {
+          content: string;
+        }
+      ];
+      name: [
+        {
+          content: string;
+        }
+      ];
+    }
+  ];
+  events: [
+    {
+      execution: {
+        start: string;
+        end: string;
+      };
+      paceOfStudyPercentage: number;
+      urls: [
+        {
+          content: string;
+        }
+      ];
+      provider: string;
+    }
+  ];
 }
 
 export interface ISubject {
