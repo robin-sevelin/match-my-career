@@ -19,8 +19,7 @@ export const OccupationsList = () => {
           </span>{' '}
         </h3>
         <p style={{ marginTop: '1rem' }}>
-          {search.educations[0].education.form.code},{' '}
-          {search.educations[0].education_plan.program_code}
+          {search.educations[0].education.form.code}
         </p>
       </div>
       {search.occupations.length !== 0 ? (
