@@ -136,12 +136,13 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
 
 .digi-button--variation-primary {
   background-color: var(--orange) !important;
-  color: var(--white) !important
+  color: var(--white) !important;
+  border: 1px solid var(--orange) !important;
 }
 
 .digi-button--variation-secondary {
   background-color: var(--grey) !important;
-  color: var(--white) !important
+  color: var(--white) !important;
 }
 
 .sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after{

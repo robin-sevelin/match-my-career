@@ -46,10 +46,6 @@ export const ResultCardContainer = ({
     navigate('/abouteducation');
   };
 
-  console.log(search.educations[0]);
-  
-  
-
   return (
     <div className='cardContainer'>
       {search.educations.map((education) => (
