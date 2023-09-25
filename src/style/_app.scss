@@ -184,3 +184,7 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   color: var(--white) !important
 }
 
+.sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after{
+  background-color: var(--orange);
+}
+
