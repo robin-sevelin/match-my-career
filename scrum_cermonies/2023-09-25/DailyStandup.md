@@ -8,9 +8,10 @@ The header and the footer and some global styling will be fixed as well.
 
 Today I will keep working on the overall design of our About page, as well as our global footer.
 
-
 ### Emilia
+
 Today I will start implementing our new design on our startpage along with the search page.
 
 ### Robin
 
+Today i styled the header, i finished quite fast so i spent a few hours on refactoring the fetching of the data for the components so the app will be more responsive and use the spinners properly.
