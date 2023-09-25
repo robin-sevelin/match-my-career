@@ -11,11 +11,11 @@
   }
   .occupation-card {
     background-color: #ffffff;
-    height: 150px;
+    height: 120px;
     max-width: 600px;
     margin: auto;
     margin-block: 2em;
-    padding: 2rem;
+    padding: 2em;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
@@ -28,17 +28,26 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      h4,
+      h4::after {
+        top: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 0;
+      }
+
       h4::after {
         background-color: #ef7b22;
         width: 100px;
       }
     }
     .button-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       button {
+        position: relative;
+        top: 2px;
         background-color: #ef7b22;
         border: none;
         display: flex;
@@ -60,4 +69,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  button {
+    background-color: red;
+  }
 }

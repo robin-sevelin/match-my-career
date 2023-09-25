@@ -20,6 +20,7 @@ export interface IEducation {
       }
     ];
   };
+  education_plan: { program_code: string };
   text_enrichments_results: {
     enriched_candidates: {
       competencies: string[];

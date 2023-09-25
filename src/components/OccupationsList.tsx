@@ -12,12 +12,16 @@ export const OccupationsList = () => {
     <div className='occupations-container'>
       <div className='occupation-header'>
         <h3>
-          Relaterad yrken till
+          Relaterade yrken till
           <span style={{ fontWeight: 'bold' }}>
             {' '}
             {search.educations[0].education.title[0].content}
-          </span>
+          </span>{' '}
         </h3>
+        <p style={{ marginTop: '1rem' }}>
+          {search.educations[0].education.form.code},{' '}
+          {search.educations[0].education_plan.program_code}
+        </p>
       </div>
       {search.occupations.length !== 0 ? (
         search.occupations.map((occupation) => (
