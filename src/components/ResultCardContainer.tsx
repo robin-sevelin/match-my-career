@@ -46,16 +46,29 @@ export const ResultCardContainer = ({
     navigate('/abouteducation');
   };
 
+  console.log(search.educations[0]);
+  
+  
+
   return (
     <div className='cardContainer'>
       {search.educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
           <h4>
-            {education.education.title[0].content} - {education.education.code}
+            {education.education.title[0].content}
           </h4>
-          <p>
-            {education.education.form.code},
+          <p className='eduCode'>
+            {education.education.form.code}, 
             {education.education.configuration.code}
+          </p>
+          <p>
+            {education.education.code}
+          </p>
+          <p>
+            {education.providerSummary.providers[0]}
+          </p>
+          <p>
+            {education.eventSummary.paceOfStudyPercentage[0]} %
           </p>
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken
