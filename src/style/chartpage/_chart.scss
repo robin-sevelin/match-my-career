@@ -1,0 +1,50 @@
+.chart-container {
+  position: relative;
+  top: 50px;
+  background-color: white;
+  border-radius: 10px;
+  width: 1200px;
+}
+
+.buttonWrapper
+  .tableButton
+  .sc-digi-bar-chart
+  .sc-digi-button-h
+  .sc-digi-button-s
+  .hydrated {
+  color: black;
+}
+
+a {
+  color: black;
+}
+
+.sc-digi-bar-chart {
+  margin: auto;
+}
+
+.bar {
+  width: 45px;
+  fill: #ef7b22;
+}
+
+.bar:hover {
+  fill: #774722;
+  transition: 0.3s ease-in-out;
+}
+
+text {
+  transform: rotate(0);
+  width: 200px;
+}
+
+text .barText {
+  color: blue;
+}
+
+g .barGroup {
+}
+
+g .text {
+  color: black;
+}

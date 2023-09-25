@@ -1,5 +1,6 @@
 @import './normalize';
-
+@import './occupationPage/occupations';
+@import './chartpage/chart';
 
 :root {
   --orange: #EF7B22;
@@ -20,6 +21,7 @@
 body {
   position: relative;
   color: #1a1a1a;
+  background-color: #f6f3ee;
 }
 
 header {
@@ -61,7 +63,6 @@ main {
   min-height: calc(100vh - 300px);
   margin: auto;
   margin-bottom: 100px;
-  background-color: #f7f7f8;
 }
 
 footer {
@@ -85,8 +86,7 @@ footer p {
   gap: 1rem;
 }
 
-.cardContainer,
-.occupations-container {
+.cardContainer {
   background-color: #eaeaea;
   border-radius: 5px;
   display: flex;
@@ -97,8 +97,7 @@ footer p {
   overflow-y: scroll;
 }
 
-.eduCard,
-.occupation-card {
+.eduCard {
   border-radius: 5px;
   background-color: #f4f4f4;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
@@ -109,14 +108,12 @@ footer p {
 }
 
 .eduCard,
-.occupation-card h4,
-.eduCard,
-.occupation-card p {
+.eduCard {
   margin-bottom: 1rem;
 }
 
 .eduCard,
-.occupation-card button {
+button {
   margin-left: 5px;
   margin-right: 5px;
   margin-top: 15px;
@@ -126,6 +123,24 @@ footer p {
   margin-top: 1rem;
   height: 500px;
 }
+
+
+.about-education-container {
+  background-color: #eaeaea;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+  max-width: 700px;
+  overflow: scroll;
+}
+
+.about-education-container div {
+  margin: 2rem;
+}
+
 
 
 .result {
@@ -153,13 +168,11 @@ footer p {
   height: 600px;
 }
 
-.chart {
-  background-color: var(--digi--global--color--neutral--grayscale--base);
-}
-
-h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
+h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   font-size: 1.2em !important;
 }
+
+
 
 .digi-button--variation-primary {
   background-color: var(--orange) !important;
@@ -170,3 +183,4 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo{
   background-color: var(--grey) !important;
   color: var(--white) !important
 }
+

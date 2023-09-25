@@ -20,7 +20,6 @@ export const useGraphData = (search: Search) => {
     {
       yValues: percent,
       title: 'Efterfrågad procentandel',
-      colorToken: '--digi--global--color--cta--green--base',
     },
   ];
 
@@ -43,7 +42,7 @@ export const useGraphData = (search: Search) => {
       valueLabels: true,
       labelProperties: {
         significantDigits: 2,
-        shortHand: true,
+        shortHand: false,
       },
     },
   };

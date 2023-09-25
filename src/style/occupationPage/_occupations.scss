@@ -1,0 +1,75 @@
+.occupations-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1em;
+  .occupation-header {
+    margin: auto;
+    max-width: fit-content;
+    h3 {
+      font-weight: 300;
+    }
+  }
+  .occupation-card {
+    background-color: #ffffff;
+    height: 120px;
+    max-width: 600px;
+    margin: auto;
+    margin-block: 2em;
+    padding: 2em;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    width: 500px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h4,
+      h4::after {
+        top: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 0;
+      }
+
+      h4::after {
+        background-color: #ef7b22;
+        width: 100px;
+      }
+    }
+    .button-container {
+      button {
+        position: relative;
+        top: 2px;
+        background-color: #ef7b22;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      button:hover {
+        background-color: #a05419;
+        border: none;
+      }
+    }
+  }
+}
+
+.navigate-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    background-color: red;
+  }
+}
