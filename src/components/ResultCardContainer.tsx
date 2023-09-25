@@ -65,10 +65,7 @@ export const ResultCardContainer = ({
             {education.education.code}
           </p>
           <p>
-            {education.providerSummary.providers[0]}
-          </p>
-          <p>
-            {education.eventSummary.paceOfStudyPercentage[0]} %
+            {education.providerSummary.providers[0]}, {education.eventSummary.paceOfStudyPercentage[0]} %
           </p>
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken
