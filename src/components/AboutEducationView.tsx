@@ -2,13 +2,15 @@ import { DigiButton, DigiTypography, DigiTypographyHeadingJumbo } from '@digi/ar
 import { ButtonVariation, TypographyHeadingJumboLevel, TypographyVariation } from '@digi/arbetsformedlingen';
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-import { Link } from 'react-router-dom';
-import '../style/_aboutview.scss';
+import { useNavigate } from 'react-router-dom';
+import '../style/aboutpage/_aboutpage.scss';
+
 
 
 export const AboutEducationView = () => {
   const {search} = useContext(SearchContext);
-  const education = search.showAboutView;  
+  const education = search.showAboutView;
+  const navigate = useNavigate();
 
   return (
     <DigiTypography 
@@ -67,9 +69,11 @@ export const AboutEducationView = () => {
           </p>
         </div>
         <div className='back-btn-div'>
-        <DigiButton 
-          afVariation={ButtonVariation.SECONDARY}>
-        <Link to={'/search'}>Tillbaka</Link>
+        <DigiButton
+          afVariation={ButtonVariation.SECONDARY}
+          onAfOnClick={() => navigate("/search")}
+          >
+            Tillbaka
         </DigiButton>
         </div>
     </DigiTypography>
