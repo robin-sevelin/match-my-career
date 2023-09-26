@@ -1,14 +1,13 @@
-import { IAboutEducation } from './IAboutEducation';
-import { IEducation } from './IEducation';
-import { IEnrichedOccupation } from './IEnrichedOccupation';
-import { IOccupation } from './IRelatedOccupations';
-
 export class Search {
   constructor(
-    public searchText: string,
-    public educations: IEducation[],
-    public occupations: IOccupation[],
-    public enchrichedOccupation: IEnrichedOccupation,
-    public showAboutView: IAboutEducation
+    public educationSearch: string,
+    public occupationsSearch: {
+      text: string;
+      education: string;
+      name: string;
+      code: string;
+    },
+    public enchrichedOccupationSearch: string,
+    public aboutEducationSearch: string
   ) {}
 }

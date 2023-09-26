@@ -1,3 +1,4 @@
+import { IAboutEducation } from '../models/IAboutEducation';
 import { IEducation } from '../models/IEducation';
 import { IEducationResponse } from '../models/IEducationResponse';
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
@@ -54,12 +55,18 @@ export const postMatchByText = async (
   const resposne = await post<IRealatedOccupations>(
     `${
       import.meta.env.VITE_BASE_URL
-    }occupations/match-by-text?input_text=${text}&input_headline=${education}&limit=10&offset=0&include_metadata=true`
+    }occupations/match-by-text?input_text=${text}&input_headline=${education}&limit=10&include_metadata=true`
   );
 
   return resposne.related_occupations;
 };
 
-export const getEducationById = async (id: string) => {
-  return await get<IEducation>(`${import.meta.env.VITE_BASE_URL}educations/${id}`);
+export const getEducationById = async (
+  id: string
+): Promise<IAboutEducation> => {
+  const response = await get<IAboutEducation>(
+    `${import.meta.env.VITE_BASE_URL}educations/${id}`
+  );
+
+  return response;
 };

@@ -1,32 +1,22 @@
 import { useContext } from 'react';
 import { ResultCardContainer } from './ResultCardContainer';
 import { SearchContext } from '../contexts/SearchContext';
-import { useState } from 'react';
-import { IEducation } from '../models/IEducation';
-import { DigiTypographyHeadingJumbo } from '@digi/arbetsformedlingen-react';
-import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
+import { useGetEducations } from '../hooks/useGetEducations';
+import { ShowLoader } from './ShowLoader';
 
 export const ResultContainer = () => {
   const { search } = useContext(SearchContext);
-  const [selectedEducation, setSelectedEducation] = useState<IEducation | null>(
-    null
-  );
+  const { educations } = useGetEducations(search);
 
   return (
     <>
-      {search.educations === null ? (
-        <DigiTypographyHeadingJumbo
-          af-Level={TypographyHeadingJumboLevel.H4}
-          afText='Sökningen gav inget resultat'
-        ></DigiTypographyHeadingJumbo>
-      ) : (
-        <div className='result'>
-          <ResultCardContainer
-            selectedEducation={selectedEducation}
-            setSelectedEducation={setSelectedEducation}
-          />
-        </div>
-      )}
+      <div className='result'>
+        {educations ? (
+          <ResultCardContainer educations={educations} />
+        ) : (
+          <ShowLoader></ShowLoader>
+        )}
+      </div>
     </>
   );
 };

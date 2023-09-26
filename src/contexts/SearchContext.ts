@@ -8,10 +8,11 @@ export interface ISearchContext {
 }
 
 export const SearchContext = createContext<ISearchContext>({
-  search: new Search('', [], [], {
-    id: '',
-    occupation_label: '',
-    metadata: { enriched_candidates_term_frequency: { competencies: [] } },
-  }),
+  search: new Search(
+    '',
+    { text: '', education: '', name: '', code: '' },
+    '',
+    ''
+  ),
   dispatch: () => {},
 });

@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { IOccupation } from '../models/IRelatedOccupations';
-import { getEnrichedOccupations } from '../services/DataService';
 import { SearchContext } from '../contexts/SearchContext';
 import { ActionType } from '../reducers/SearchReducer';
 
@@ -19,12 +18,10 @@ interface IOccupationViewProps {
 export const OccupationView = ({ occupation }: IOccupationViewProps) => {
   const { dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
-  const handleClick = async (occupation: IOccupation) => {
-    const response = await getEnrichedOccupations(occupation.id);
-
+  const handleClick = (id: string) => {
     dispatch({
-      type: ActionType.ADDED_ENRICHED_OCCUPATIONS,
-      payload: JSON.stringify(response),
+      type: ActionType.ADDED_ENRICHED_OCCUPATIONS_SEARCH,
+      payload: id,
     });
 
     navigate('/skillchart');
@@ -42,7 +39,10 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
           </DigiTypography>
         </div>
         <div className='button-container'>
-          <DigiButton class='back' onAfOnClick={() => handleClick(occupation)}>
+          <DigiButton
+            afVariation='primary'
+            onAfOnClick={() => handleClick(occupation.id)}
+          >
             Kompetenser
           </DigiButton>
         </div>

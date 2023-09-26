@@ -12,14 +12,13 @@
   .occupation-card {
     background-color: #ffffff;
     height: 120px;
-    max-width: 600px;
     margin: auto;
     margin-block: 2em;
     padding: 2em;
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
-    width: 500px;
+    width: 600px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
@@ -44,22 +43,6 @@
         width: 100px;
       }
     }
-    .button-container {
-      button {
-        position: relative;
-        top: 2px;
-        background-color: #ef7b22;
-        border: none;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      button:hover {
-        background-color: #a05419;
-        border: none;
-      }
-    }
   }
 }
 
@@ -69,7 +52,4 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  button {
-    background-color: red;
-  }
 }

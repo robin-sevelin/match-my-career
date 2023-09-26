@@ -4,19 +4,14 @@ import { useReducer } from 'react';
 import { SearchReducer } from './reducers/SearchReducer';
 import { SearchContext } from './contexts/SearchContext';
 import { Search } from './models/Search';
-import { useLocalStorage } from './hooks/useStorage';
 import { useGetSearch } from './hooks/useGetSearch';
+import { useLocalStorage } from './hooks/useStorage';
 
 function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
     'search',
-    new Search('', [], [], {
-      id: '',
-      occupation_label: '',
-      metadata: { enriched_candidates_term_frequency: { competencies: [] } },
-    })
+    new Search('', { text: '', education: '', name: '', code: '' }, '', '')
   );
-
   const [search, dispatch] = useReducer(SearchReducer, storedSearch);
 
   useGetSearch(search, setStoredSearch);

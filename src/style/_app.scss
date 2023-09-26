@@ -1,14 +1,15 @@
 @import './normalize';
 @import './occupationPage/occupations';
 @import './chartpage/chart';
+@import './header//header';
 
 :root {
-  --orange: #EF7B22;
-  --grey: #9F9D9C;
-  --white: #F6F3EE;
-  --brown: #916F50;
+  --orange: #ef7b22;
+  --grey: #9f9d9c;
+  --white: #f6f3ee;
+  --brown: #916f50;
   --dark: #242327;
-  --red: #E54236;
+  --red: #e54236;
 }
 
 * {
@@ -22,14 +23,6 @@ body {
   position: relative;
   color: #242327;
   background-color: #f6f3ee;
-}
-
-header {
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #526d82;
 }
 
 a {
@@ -83,13 +76,6 @@ main {
   width: 500px;
 }
 
-.chart-container {
-  padding: 1rem;
-  margin: auto;
-  max-width: 900px;
-  height: 600px;
-}
-
 h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   font-size: 1.2em !important;
 }
@@ -108,4 +94,3 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
 .sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after{
   background-color: var(--orange);
 }
-

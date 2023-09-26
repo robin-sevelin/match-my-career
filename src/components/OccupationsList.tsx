@@ -3,10 +3,13 @@ import { OccupationView } from './OccupationView';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { useNavigate } from 'react-router-dom';
+import { ShowLoader } from './ShowLoader';
+import { useGetOccupations } from '../hooks/useGetOccupations';
 
 export const OccupationsList = () => {
   const { search } = useContext(SearchContext);
   const navigate = useNavigate();
+  const { occupations } = useGetOccupations(search);
 
   return (
     <div className='occupations-container'>
@@ -15,25 +18,25 @@ export const OccupationsList = () => {
           Relaterade yrken till
           <span style={{ fontWeight: 'bold' }}>
             {' '}
-            {search.educations[0].education.title[0].content}
+            {search.occupationsSearch.name}
           </span>{' '}
+          <span>{search.occupationsSearch.code}</span>
         </h3>
-        <p style={{ marginTop: '1rem' }}>
-          {search.educations[0].education.form.code}
-        </p>
       </div>
-      {search.occupations.length !== 0 ? (
-        search.occupations.map((occupation) => (
+      {occupations.length !== 0 ? (
+        occupations.map((occupation) => (
           <div key={occupation.id}>
             <OccupationView occupation={occupation} />
           </div>
         ))
       ) : (
-        <p>Hittade tyvärr inget matchande yrke</p>
+        <ShowLoader></ShowLoader>
       )}
-
       <div className='navigate-container'>
-        <DigiButton onAfOnClick={() => navigate('/search')}>
+        <DigiButton
+          afVariation='secondary'
+          onAfOnClick={() => navigate('/search')}
+        >
           Tillbaka
         </DigiButton>
       </div>
