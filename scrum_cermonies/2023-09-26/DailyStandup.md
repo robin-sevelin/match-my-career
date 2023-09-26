@@ -4,7 +4,7 @@ Today we worked as a group a did a major merge with some major conflicts due to 
 
 ### Filip
 
-Today I will keep working on the overall design of our About page, as well as our global footer.
+Today I will add an error component to handle bad requests.
 
 ### Emilia
 
