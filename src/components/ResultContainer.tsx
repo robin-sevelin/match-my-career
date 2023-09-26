@@ -1,9 +1,8 @@
 import { useContext } from 'react';
 import { ResultCardContainer } from './ResultCardContainer';
 import { SearchContext } from '../contexts/SearchContext';
-import { DigiTypographyHeadingJumbo } from '@digi/arbetsformedlingen-react';
-import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
 import { useGetEducations } from '../hooks/useGetEducations';
+import { ShowLoader } from './ShowLoader';
 
 export const ResultContainer = () => {
   const { search } = useContext(SearchContext);
@@ -11,16 +10,13 @@ export const ResultContainer = () => {
 
   return (
     <>
-      {educations === null ? (
-        <DigiTypographyHeadingJumbo
-          af-Level={TypographyHeadingJumboLevel.H4}
-          afText='Sökningen gav inget resultat'
-        ></DigiTypographyHeadingJumbo>
-      ) : (
-        <div className='result'>
+      <div className='result'>
+        {educations ? (
           <ResultCardContainer educations={educations} />
-        </div>
-      )}
+        ) : (
+          <ShowLoader></ShowLoader>
+        )}
+      </div>
     </>
   );
 };
