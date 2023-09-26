@@ -1,7 +1,7 @@
 import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { ResultContainer } from './ResultContainer';
-import { ActionType } from '../reducers/SearchReducer';
+import { ActionType } from '../types/ActionTypes';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
 import '../style/searchpage/_searchpage.scss';
 

@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { IOccupation } from '../models/IRelatedOccupations';
 import { SearchContext } from '../contexts/SearchContext';
-import { ActionType } from '../reducers/SearchReducer';
 
 import {
   DigiButton,
@@ -10,6 +9,7 @@ import {
 } from '@digi/arbetsformedlingen-react';
 import { TypographyHeadingJumboLevel } from '@digi/arbetsformedlingen';
 import { useNavigate } from 'react-router-dom';
+import { ActionType } from '../types/ActionTypes';
 
 interface IOccupationViewProps {
   occupation: IOccupation;
@@ -39,10 +39,7 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
           </DigiTypography>
         </div>
         <div className='button-container'>
-          <DigiButton
-            afVariation='primary'
-            onAfOnClick={() => handleClick(occupation.id)}
-          >
+          <DigiButton onAfOnClick={() => handleClick(occupation.id)}>
             Kompetenser
           </DigiButton>
         </div>

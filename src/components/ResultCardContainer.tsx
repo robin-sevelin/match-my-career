@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
-import { ActionType } from '../reducers/SearchReducer';
+import { ActionType } from '../types/ActionTypes';
 import { IEducation } from '../models/IEducation';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,18 +33,15 @@ export const ResultCardContainer = ({ educations }: IResultCardProps) => {
     <div className='cardContainer'>
       {educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
-          <h4>
-            {education.education.title[0].content}
-          </h4>
+          <h4>{education.education.title[0].content}</h4>
           <p className='eduCode'>
-            {education.education.form.code}, 
+            {education.education.form.code},
             {education.education.configuration.code}
           </p>
+          <p>{education.education.code}</p>
           <p>
-            {education.education.code}
-          </p>
-          <p>
-            {education.providerSummary.providers[0]}, {education.eventSummary.paceOfStudyPercentage[0]} %
+            {education.providerSummary.providers[0]},{' '}
+            {education.eventSummary.paceOfStudyPercentage[0]} %
           </p>
           <DigiButton onClick={() => getOccupations(education)}>
             Relaterade Yrken

@@ -1,23 +1,6 @@
 import { IAboutEducation } from '../models/IAboutEducation';
-import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 
-export const enchrichedOccupationBaseValues: IEnrichedOccupation = {
-  id: '',
-  occupation_label: '',
-  metadata: {
-    enriched_candidates_term_frequency: {
-      competencies: [
-        {
-          term: '',
-          percent_for_occupation: 0,
-          traits: [{ term: '', percent_for_occupation: 0 }],
-        },
-      ],
-    },
-  },
-};
-
-export const aboutEducationBaseValues: IAboutEducation = {
+export const ABOUT_EDUCATION_BASE_VALUES: IAboutEducation = {
   id: '',
   education: {
     title: [

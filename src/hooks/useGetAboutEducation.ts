@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getEducationById } from '../services/DataService';
 import { IAboutEducation } from '../models/IAboutEducation';
-import { aboutEducationBaseValues } from '../constants/initialValues';
+import { ABOUT_EDUCATION_BASE_VALUES } from '../constants/AboutEducationBaseValues';
 import { Search } from '../models/Search';
 
 export const useGetAboutEducation = (search: Search) => {
   const [education, setEducation] = useState<IAboutEducation>(
-    aboutEducationBaseValues
+    ABOUT_EDUCATION_BASE_VALUES
   );
 
   useEffect(() => {
