@@ -21,7 +21,7 @@
 
 body {
   position: relative;
-  color: #1a1a1a;
+  color: #242327;
   background-color: #f6f3ee;
 }
 
@@ -58,87 +58,12 @@ main {
   margin-bottom: 100px;
 }
 
-footer {
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  position: relative;
-  background-color: #526d82;
-  display: flex;
-  justify-content: center;
-}
-
-footer p {
-  padding: 1em;
-}
-
-.result {
-  display: flex;
-  max-width: 1200px;
-  margin: auto;
-  gap: 1rem;
-}
-
-.cardContainer {
-  background-color: #eaeaea;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 47em;
-  padding: 2em;
-  overflow-y: scroll;
-}
-
-.eduCard {
-  border-radius: 5px;
-  background-color: #f4f4f4;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  margin: 0.7rem;
-  width: 430px;
-  text-transform: capitalize;
-}
-
-.eduCard,
-.eduCard {
-  margin-bottom: 1rem;
-}
-
-.eduCard,
-button {
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 15px;
-}
 
 .competencies {
   margin-top: 1rem;
   height: 500px;
 }
 
-.about-education-container {
-  background-color: #eaeaea;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  margin: 1rem;
-  max-width: 700px;
-  overflow: scroll;
-}
-
-.about-education-container div {
-  margin: 2rem;
-}
-
-.result {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 
 .loaderContainer {
   width: 10em;
@@ -158,9 +83,14 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
 .digi-button--variation-primary {
   background-color: var(--orange) !important;
   color: var(--white) !important;
+  border: 1px solid var(--orange) !important;
 }
 
 .digi-button--variation-secondary {
   background-color: var(--grey) !important;
   color: var(--white) !important;
+}
+
+.sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after{
+  background-color: var(--orange);
 }

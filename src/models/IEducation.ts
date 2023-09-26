@@ -34,6 +34,7 @@ export interface IEducation {
       };
     };
   };
+
   education_providers: [
     {
       urls: [
@@ -63,6 +64,14 @@ export interface IEducation {
       provider: string;
     }
   ];
+
+  eventSummary: {
+    paceOfStudyPercentage: number[];
+  };
+  providerSummary: {
+    providers: string[]
+  };
+
 }
 
 export interface ISubject {

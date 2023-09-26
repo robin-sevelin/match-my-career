@@ -4,6 +4,7 @@ import { SearchContext } from '../contexts/SearchContext';
 import { ResultContainer } from './ResultContainer';
 import { ActionType } from '../reducers/SearchReducer';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
+import '../style/searchpage/_searchpage.scss';
 
 export const Search = () => {
   const { dispatch } = useContext(SearchContext);

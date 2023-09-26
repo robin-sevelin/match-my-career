@@ -11,14 +11,12 @@ import {
 import { useContext } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
 import { useNavigate } from 'react-router-dom';
-import '../style/_aboutview.scss';
-import { useGetAboutEducation } from '../hooks/useGetAboutEducation';
-import { ShowLoader } from './ShowLoader';
+import '../style/aboutpage/_aboutpage.scss';
 
 export const AboutEducationView = () => {
+  const {search} = useContext(SearchContext);
+  const education = search.showAboutView;
   const navigate = useNavigate();
-  const { search } = useContext(SearchContext);
-  const { education } = useGetAboutEducation(search.aboutEducationSearch);
 
   return (
     <>
