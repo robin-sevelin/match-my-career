@@ -1,5 +1,5 @@
-import { IAboutEducation } from './IAboutEducation';
-import { IEnrichedOccupation } from './IEnrichedOccupation';
+import { IAboutEducation } from '../models/IAboutEducation';
+import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 
 export const enchrichedOccupationBaseValues: IEnrichedOccupation = {
   id: '',

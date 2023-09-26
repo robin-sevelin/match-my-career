@@ -7,8 +7,13 @@ export interface IEducation {
       type: string;
     };
     identifier: string;
-    title: ITitle[];
-    subject: ISubject[];
+    title: [
+      {
+        lang: string;
+        content: string;
+      }
+    ];
+    subject: [code: string, name: string, type: string];
     form: {
       code: string;
       type: string;
@@ -69,18 +74,6 @@ export interface IEducation {
     paceOfStudyPercentage: number[];
   };
   providerSummary: {
-    providers: string[]
+    providers: string[];
   };
-
-}
-
-export interface ISubject {
-  code: string;
-  name: string;
-  type: string;
-}
-
-export interface ITitle {
-  lang: string;
-  content: string;
 }

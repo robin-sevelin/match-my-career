@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 import { getEnrichedOccupations } from '../services/DataService';
-import { enchrichedOccupationBaseValues } from '../models/initialValues';
+import { enchrichedOccupationBaseValues } from '../constants/initialValues';
 import { Search } from '../models/Search';
 
 export const useGetEnrichedOccupations = (search: Search) => {

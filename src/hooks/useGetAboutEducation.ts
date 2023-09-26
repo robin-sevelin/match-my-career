@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getEducationById } from '../services/DataService';
 import { IAboutEducation } from '../models/IAboutEducation';
-import { aboutEducationBaseValues } from '../models/initialValues';
+import { aboutEducationBaseValues } from '../constants/initialValues';
 import { Search } from '../models/Search';
 
 export const useGetAboutEducation = (search: Search) => {
@@ -19,8 +19,6 @@ export const useGetAboutEducation = (search: Search) => {
       getData(search.aboutEducationSearch);
     }
   }, [search]);
-
-  console.log('resultat', education);
 
   return { education } as const;
 };

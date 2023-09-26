@@ -20,8 +20,6 @@ export const AboutEducationView = () => {
   const education = useGetAboutEducation(search);
   const navigate = useNavigate();
 
-  console.log(education);
-
   return (
     <>
       <DigiTypography afVariation={TypographyVariation.SMALL}>
