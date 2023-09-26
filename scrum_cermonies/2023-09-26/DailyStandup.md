@@ -8,7 +8,7 @@ Today I will add an error component to handle bad requests.
 
 ### Emilia
 
-Today I will start implementing our new design on our startpage along with the search page.
+Today I will start working on a component which renders when no results are found. I will also start implementing the component where needed.
 
 ### Robin
 
