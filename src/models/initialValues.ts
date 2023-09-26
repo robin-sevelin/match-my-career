@@ -20,7 +20,12 @@ export const enchrichedOccupationBaseValues: IEnrichedOccupation = {
 export const aboutEducationBaseValues: IAboutEducation = {
   id: '',
   education: {
-    title: [],
+    title: [
+      {
+        content: '',
+        lang: '',
+      },
+    ],
     code: '',
     form: {
       code: '',

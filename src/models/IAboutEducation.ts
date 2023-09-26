@@ -1,7 +1,12 @@
 export interface IAboutEducation {
   id: string;
   education: {
-    title: ITitle[];
+    title: [
+      {
+        content: string;
+        lang: string;
+      }
+    ];
     code: string;
     form: {
       code: string;
@@ -41,15 +46,4 @@ export interface IAboutEducation {
       provider: string;
     }
   ];
-}
-
-export interface ISubject {
-  code: string;
-  name: string;
-  type: string;
-}
-
-export interface ITitle {
-  lang: string;
-  content: string;
 }

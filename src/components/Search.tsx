@@ -1,6 +1,5 @@
 import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-
 import { ResultContainer } from './ResultContainer';
 import { ActionType } from '../reducers/SearchReducer';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
@@ -20,15 +19,18 @@ export const Search = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <DigiFormInputSearch
-          value={input}
-          afLabel='Jobbtitel'
-          afButtonText='Sök'
-          onAfOnChange={(e) => setInput(e.target.value)}
-        ></DigiFormInputSearch>
-      </form>
-      <ResultContainer />
+      <section className='searchpage'>
+        {' '}
+        <form onSubmit={handleSubmit}>
+          <DigiFormInputSearch
+            value={input}
+            afLabel='Jobbtitel'
+            afButtonText='Sök'
+            onAfOnChange={(e) => setInput(e.target.value)}
+          ></DigiFormInputSearch>
+        </form>
+        <ResultContainer />
+      </section>
     </>
   );
 };

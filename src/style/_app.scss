@@ -1,7 +1,9 @@
 @import './normalize';
 @import './occupationPage/occupations';
 @import './chartpage/chart';
-@import './header//header';
+@import './header/header';
+@import './aboutpage/aboutpage';
+@import './searchpage/searchpage';
 
 :root {
   --orange: #ef7b22;
@@ -58,12 +60,10 @@ main {
   margin-bottom: 100px;
 }
 
-
 .competencies {
   margin-top: 1rem;
   height: 500px;
 }
-
 
 .loaderContainer {
   width: 10em;
@@ -91,6 +91,7 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   color: var(--white) !important;
 }
 
-.sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after{
+.sc-digi-typography-heading-jumbo-h
+  .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after {
   background-color: var(--orange);
 }
