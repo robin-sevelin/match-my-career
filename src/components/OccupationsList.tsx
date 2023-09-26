@@ -3,7 +3,6 @@ import { OccupationView } from './OccupationView';
 import { SearchContext } from '../contexts/SearchContext';
 import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { useNavigate } from 'react-router-dom';
-
 import { ShowLoader } from './ShowLoader';
 import { useGetOccupations } from '../hooks/useGetOccupations';
 
@@ -33,7 +32,6 @@ export const OccupationsList = () => {
       ) : (
         <ShowLoader></ShowLoader>
       )}
-
       <div className='navigate-container'>
         <DigiButton
           afVariation='secondary'
