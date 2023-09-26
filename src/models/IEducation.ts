@@ -34,6 +34,12 @@ export interface IEducation {
       };
     };
   };
+  eventSummary: {
+    paceOfStudyPercentage: number[];
+  };
+  providerSummary: {
+    providers: string[]
+  };
 }
 
 export interface ISubject {
