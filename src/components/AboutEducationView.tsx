@@ -18,7 +18,7 @@ import { ShowLoader } from './ShowLoader';
 export const AboutEducationView = () => {
   const navigate = useNavigate();
   const { search } = useContext(SearchContext);
-  const { education } = useGetAboutEducation(search);
+  const { education } = useGetAboutEducation(search.aboutEducationSearch);
 
   return (
     <>

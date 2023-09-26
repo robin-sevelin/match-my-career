@@ -20,8 +20,6 @@ const setGraphData = (occupations: IEnrichedOccupation) => {
   const competencies: string[] = [];
   const percent: number[] = [];
 
-  console.log('yrken', occupations);
-
   for (let i = 0; i < 10; i++) {
     competencies.push(
       occupations.metadata.enriched_candidates_term_frequency.competencies[i]
@@ -59,7 +57,7 @@ const setGraphData = (occupations: IEnrichedOccupation) => {
       valueLabels: true,
       labelProperties: {
         significantDigits: 2,
-        shortHand: false,
+        shortHand: true,
       },
     },
   };

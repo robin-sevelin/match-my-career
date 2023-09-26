@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-
 import { IOccupation } from '../models/IRelatedOccupations';
 import { postMatchByText } from '../services/DataService';
 import { Search } from '../models/Search';
@@ -8,19 +7,18 @@ export const useGetOccupations = (search: Search) => {
   const [occupations, setOccupations] = useState<IOccupation[]>([]);
 
   useEffect(() => {
-    if (occupations.length === 0) {
-      const getData = async (search: Search) => {
-        const data = await postMatchByText(
-          search.educations[0].text_enrichments_results.enriched_candidates
-            .competencies[0],
-          search.educations[0].education.description[0].content
-        );
+    if (search) {
+      const getData = async (text: string, education: string) => {
+        const data = await postMatchByText(text, education);
         setOccupations(data);
       };
 
-      getData(search);
+      getData(
+        search.occupationsSearch.text,
+        search.occupationsSearch.education
+      );
     }
-  }, [occupations, search]);
+  }, [search]);
 
   return { occupations } as const;
 };

@@ -41,13 +41,11 @@ export const getEducations = async (text: string): Promise<IEducation[]> => {
 export const getEnrichedOccupations = async (
   id: string
 ): Promise<IEnrichedOccupation> => {
-  const response = await get<IEnrichedOccupation>(
+  return await get<IEnrichedOccupation>(
     `${
       import.meta.env.VITE_BASE_URL
     }enriched_occupations?occupation_id=${id}&include_metadata=true`
   );
-
-  return response;
 };
 
 export const postMatchByText = async (

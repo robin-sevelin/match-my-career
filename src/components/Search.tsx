@@ -1,26 +1,31 @@
-import { FormEvent, useContext } from 'react';
+import { FormEvent, useContext, useState } from 'react';
 import { SearchContext } from '../contexts/SearchContext';
-import { getEducations } from '../services/DataService';
+
 import { ResultContainer } from './ResultContainer';
 import { ActionType } from '../reducers/SearchReducer';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
 
 export const Search = () => {
-  const { dispatch, search } = useContext(SearchContext);
+  const { dispatch } = useContext(SearchContext);
+  const [input, setInput] = useState('');
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const response = await getEducations(search.searchText);
 
     dispatch({
-      type: ActionType.ADDED_EDUCATIONS,
-      payload: JSON.stringify(response),
+      type: ActionType.ADDED_EDUCATIONS_SEARCH,
+      payload: input,
     });
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <DigiFormInputSearch afLabel='Jobbtitel' afButtonText='Sök' onAfOnChange={(e) => dispatch({type: ActionType.ADDED_SEARCH_TEXT, payload: e.target.value})}></DigiFormInputSearch>
+        <DigiFormInputSearch
+          value={input}
+          afLabel='Jobbtitel'
+          afButtonText='Sök'
+          onAfOnChange={(e) => setInput(e.target.value)}
+        ></DigiFormInputSearch>
       </form>
       <ResultContainer />
     </>

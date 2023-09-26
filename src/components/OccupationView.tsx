@@ -18,10 +18,10 @@ interface IOccupationViewProps {
 export const OccupationView = ({ occupation }: IOccupationViewProps) => {
   const { dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
-  const handleClick = async (occupation: IOccupation) => {
+  const handleClick = (id: string) => {
     dispatch({
-      type: ActionType.ADDED_ENRICHED_OCCUPATIONS,
-      payload: JSON.stringify(occupation),
+      type: ActionType.ADDED_ENRICHED_OCCUPATIONS_SEARCH,
+      payload: id,
     });
 
     navigate('/skillchart');
@@ -41,7 +41,7 @@ export const OccupationView = ({ occupation }: IOccupationViewProps) => {
         <div className='button-container'>
           <DigiButton
             afVariation='primary'
-            onAfOnClick={() => handleClick(occupation)}
+            onAfOnClick={() => handleClick(occupation.id)}
           >
             Kompetenser
           </DigiButton>

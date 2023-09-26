@@ -1,26 +1,24 @@
 import { useState, useEffect } from 'react';
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 import { getEnrichedOccupations } from '../services/DataService';
-import { Search } from '../models/Search';
 import { enchrichedOccupationBaseValues } from '../models/initialValues';
+import { Search } from '../models/Search';
 
 export const useGetEnrichedOccupations = (search: Search) => {
-  const [occupations, setOccupations] = useState<IEnrichedOccupation>(
+  const [occupation, setOccupation] = useState<IEnrichedOccupation>(
     enchrichedOccupationBaseValues
   );
 
   useEffect(() => {
     if (search) {
-      const getData = async (search: Search) => {
-        const data = await getEnrichedOccupations(
-          search.enchrichedOccupation.id
-        );
-        setOccupations(data);
+      const getData = async (id: string) => {
+        const data = await getEnrichedOccupations(id);
+        setOccupation(data);
       };
 
-      getData(search);
+      getData(search.enchrichedOccupationSearch);
     }
   }, [search]);
 
-  return { occupations } as const;
+  return { occupation } as const;
 };

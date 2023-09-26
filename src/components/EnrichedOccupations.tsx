@@ -9,8 +9,9 @@ import { useGetGraphData } from '../hooks/useGetGraphData';
 
 export const EnrichedOccupations = () => {
   const { search } = useContext(SearchContext);
-  const { occupations } = useGetEnrichedOccupations(search);
-  const { chart } = useGetGraphData(occupations);
+  const { occupation } = useGetEnrichedOccupations(search);
+
+  const { chart } = useGetGraphData(occupation);
   const navigate = useNavigate();
 
   return (

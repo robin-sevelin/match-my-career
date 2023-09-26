@@ -19,12 +19,10 @@ export const OccupationsList = () => {
           Relaterade yrken till
           <span style={{ fontWeight: 'bold' }}>
             {' '}
-            {search.educations[0].education.title[0].content}
+            {search.occupationsSearch.name}
           </span>{' '}
+          <span>{search.occupationsSearch.code}</span>
         </h3>
-        <p style={{ marginTop: '1rem' }}>
-          {search.educations[0].education.form.code}
-        </p>
       </div>
       {occupations.length !== 0 ? (
         occupations.map((occupation) => (

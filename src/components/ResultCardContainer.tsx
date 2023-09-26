@@ -5,13 +5,17 @@ import { ActionType } from '../reducers/SearchReducer';
 import { IEducation } from '../models/IEducation';
 import { useNavigate } from 'react-router-dom';
 
-export const ResultCardContainer = () => {
-  const { dispatch, search } = useContext(SearchContext);
+interface IResultCardProps {
+  educations: IEducation[];
+}
+
+export const ResultCardContainer = ({ educations }: IResultCardProps) => {
+  const { dispatch } = useContext(SearchContext);
   const navigate = useNavigate();
 
   const getOccupations = async (education: IEducation) => {
     dispatch({
-      type: ActionType.ADDED_OCCUPATIONS,
+      type: ActionType.ADDED_OCCUPATIONS_SEARCH,
       payload: JSON.stringify(education),
     });
     navigate('/occupations');
@@ -19,15 +23,15 @@ export const ResultCardContainer = () => {
 
   const getEducation = async (education: IEducation) => {
     dispatch({
-      type: ActionType.ADDED_ABOUT_EDUCATION,
-      payload: JSON.stringify(education),
+      type: ActionType.ADDED_ABOUT_EDUCATION_SEARCH,
+      payload: education.id,
     });
     navigate('/abouteducation');
   };
 
   return (
     <div className='cardContainer'>
-      {search.educations.map((education) => (
+      {educations.map((education) => (
         <div className='eduCard' key={education.education.identifier}>
           <h4>
             {education.education.title[0].content} - {education.education.code}
