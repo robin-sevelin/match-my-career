@@ -8,7 +8,7 @@ Today I will add an error component to handle bad requests.
 
 ### Emilia
 
-Today I will start working on a component which renders when no results are found. I will also start implementing the component where needed.
+Today I will contuine implementing the NoResult component. Afterwards I will tweak and make the final optimizations to our design.
 
 ### Robin
 
