@@ -81,11 +81,22 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
   background-color: var.$orange !important;
   color: var.$white !important;
   border: 1px solid var.$orange !important;
+
+  &:hover {
+    background-color: var.$btnHoverColorPrimary !important;
+    border: 1px solid var.$btnHoverColorPrimary !important;
+  }
 }
 
 .digi-button--variation-secondary {
   background-color: var.$gray !important;
   color: var.$white !important;
+  border: 1px solid var.$gray !important;
+
+  &:hover {
+    background-color: var.$btnHoverColorSecondary !important;
+    border: 1px solid var.$btnHoverColorSecondary !important;
+  }
 }
 
 .sc-digi-typography-heading-jumbo-h
