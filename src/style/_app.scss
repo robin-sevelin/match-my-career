@@ -24,6 +24,17 @@ main {
   min-height: calc(100vh - 300px);
   margin: auto;
   margin-bottom: 100px;
+
+  a {
+    &:hover {
+      color: var.$orange !important;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: var.$black;
+    }
+  }
 }
 
 .loaderContainer {
