@@ -9,15 +9,6 @@ GET https://jobed-connect-api.jobtechdev.se/v1/enriched_occupations?occupation_i
 POST https://jobed-connect-api.jobtechdev.se/v1/occupations/match-by-text?input_text=front%20end&input_headline=systemutvecklare&limit=10&offset=0&include_metadata=false
 Content-Type: application/json
 
-### get education form
-
-GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/education_forms
-
-
-### get education type
-
-GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/education_types
-
 
 
 ### get educations

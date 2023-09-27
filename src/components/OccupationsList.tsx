@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { ShowLoader } from './ShowLoader';
 import { useGetOccupations } from '../hooks/useGetOccupations';
 import { NoResult } from './NoResult';
+import { ButtonVariation } from '@digi/arbetsformedlingen';
 
 export const OccupationsList = () => {
   const { search } = useContext(SearchContext);
@@ -43,7 +44,8 @@ export const OccupationsList = () => {
       )}
       <div className='navigate-container'>
         <DigiButton
-          afVariation='secondary'
+          afVariation={ButtonVariation.SECONDARY}
+          afFullWidth={false}
           onAfOnClick={() => navigate('/search')}
         >
           Tillbaka

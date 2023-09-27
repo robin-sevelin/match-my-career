@@ -4,6 +4,7 @@
 @import './header/header';
 @import './aboutpage/aboutpage';
 @import './searchpage/searchpage';
+@import './errorpage/errorpage';
 
 :root {
   --orange: #ef7b22;
@@ -12,6 +13,8 @@
   --brown: #916f50;
   --dark: #242327;
   --red: #e54236;
+
+  --digi--button--color--text--hover: var(--red);
 }
 
 * {

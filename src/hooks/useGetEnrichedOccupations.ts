@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 import { getEnrichedOccupations } from '../services/DataService';
-import { enchrichedOccupationBaseValues } from '../models/initialValues';
 import { Search } from '../models/Search';
+import { ENRICHED_OCCUPATION_BASE_VALUES } from '../constants/EnrichedOccupationBaseValues';
 
 export const useGetEnrichedOccupations = (search: Search) => {
   const [occupation, setOccupation] = useState<IEnrichedOccupation>(
-    enchrichedOccupationBaseValues
+    ENRICHED_OCCUPATION_BASE_VALUES
   );
 
   useEffect(() => {

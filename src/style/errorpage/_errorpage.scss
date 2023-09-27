@@ -1,0 +1,24 @@
+div.error-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 15rem;
+    
+    .sc-digi-notification-alert-h .digi-notification-alert__icon.sc-digi-notification-alert {
+      background-color: #E54236;
+    }
+    
+    .sc-digi-notification-alert-h .digi-notification-alert__wrapper.sc-digi-notification-alert {
+      border: 3px solid #E54236;
+    }
+    
+    .sc-digi-typography-heading-jumbo-h
+      .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after {
+      background-color: #E54236;
+      margin-bottom: 5rem;
+    }
+}
+  

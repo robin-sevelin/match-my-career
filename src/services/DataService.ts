@@ -2,31 +2,11 @@ import { IAboutEducation } from '../models/IAboutEducation';
 import { IEducation } from '../models/IEducation';
 import { IEducationResponse } from '../models/IEducationResponse';
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
-
-import { IFormValue } from '../models/IFormValue';
 import {
   IOccupation,
   IRealatedOccupations,
 } from '../models/IRelatedOccupations';
 import { get, post } from './DataServiceBase';
-
-export const getEducationForms = async (): Promise<IFormValue[]> => {
-  return await get<IFormValue[]>(
-    import.meta.env.VITE_BASE_URL + 'searchparameters/education_forms'
-  );
-};
-
-export const getEducationTypes = async (): Promise<IFormValue[]> => {
-  return await get<IFormValue[]>(
-    import.meta.env.VITE_BASE_URL + 'searchparameters/education_types'
-  );
-};
-
-export const getmMunicipalities = async (): Promise<IFormValue[]> => {
-  return await get<IFormValue[]>(
-    import.meta.env.VITE_BASE_URL + 'searchparameters/municipalities'
-  );
-};
 
 export const getEducations = async (text: string): Promise<IEducation[]> => {
   const response = await get<IEducationResponse>(
@@ -41,11 +21,13 @@ export const getEducations = async (text: string): Promise<IEducation[]> => {
 export const getEnrichedOccupations = async (
   id: string
 ): Promise<IEnrichedOccupation> => {
-  return await get<IEnrichedOccupation>(
+  const response = await get<IEnrichedOccupation>(
     `${
       import.meta.env.VITE_BASE_URL
     }enriched_occupations?occupation_id=${id}&include_metadata=true`
   );
+
+  return response;
 };
 
 export const postMatchByText = async (
