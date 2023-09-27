@@ -20,8 +20,6 @@ export const AboutEducationView = () => {
   const education = useGetAboutEducation(search);
   const navigate = useNavigate();
 
-  console.log(education);
-
   return (
     <>
       <DigiTypography afVariation={TypographyVariation.SMALL}>
@@ -61,7 +59,7 @@ export const AboutEducationView = () => {
             </p>
             <p>
               <strong>Länk: </strong>
-              {education.education.events[0].urls[0].content}
+              {education.education.education_providers[0].urls[0].content}
             </p>
             <p>
               <strong>Utbildningsperiod: </strong>

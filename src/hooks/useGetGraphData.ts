@@ -1,5 +1,4 @@
 import { ChartLineSeries, ChartLineData } from '@digi/arbetsformedlingen';
-
 import { IEnrichedOccupation } from '../models/IEnrichedOccupation';
 import { useEffect, useState } from 'react';
 
@@ -46,18 +45,18 @@ const setGraphData = (occupations: IEnrichedOccupation) => {
     },
     x: 'Kompetens',
     y: 'Procent andel som yrket efterfrågar',
-    title:
-      'Procent andelar över dom högst efterfrågade kompetenserna för ' +
-      occupations.occupation_label,
+    title: 'Efterfrågade kompetenser för ' + occupations.occupation_label,
+    subTitle:
+      'Diagrammet visar dom 10 vanligaste kompetenserna i procent andelar',
 
     meta: {
-      numberOfReferenceLines: 2,
-      percentage: true,
+      numberOfReferenceLines: 3,
+      percentage: false,
       hideXAxis: false,
       valueLabels: true,
       labelProperties: {
-        significantDigits: 2,
-        shortHand: true,
+        significantDigits: 3,
+        shortHand: false,
       },
     },
   };

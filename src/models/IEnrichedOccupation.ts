@@ -18,14 +18,3 @@ export interface IEnrichedOccupation {
     };
   };
 }
-
-// export interface ICompetencies {
-//   term: string;
-//   percent_for_occupation: number;
-//   traits: ITrait[];
-// }
-
-// export interface ITrait {
-//   term: string;
-//   percent_for_occupation: string;
-// }

@@ -1,15 +1,9 @@
 import { Search } from '../models/Search';
+import { ActionType } from '../types/ActionTypes';
 
 export interface ISearchAction {
   type: ActionType;
   payload: string;
-}
-
-export enum ActionType {
-  ADDED_EDUCATIONS_SEARCH,
-  ADDED_OCCUPATIONS_SEARCH,
-  ADDED_ENRICHED_OCCUPATIONS_SEARCH,
-  ADDED_ABOUT_EDUCATION_SEARCH,
 }
 
 export const SearchReducer = (search: Search, action: ISearchAction) => {
