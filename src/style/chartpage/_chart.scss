@@ -1,15 +1,43 @@
+@use '../utils/variables' as var;
+
 .chart-container {
   position: relative;
   top: 50px;
   padding: 2em;
   min-height: 800px;
+
+  svg {
+    g.tick {
+      text {
+        fill: var.$black;
+        text-transform: capitalize;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      
+    }
+  }
+
+  tr {
+    th {
+      text-transform: capitalize;
+    }
+  }
+
+  .bar {
+    fill: var.$orange;
+  
+    &:hover {
+      fill: #b34a0e;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  button {
+    margin-top: 2em;
+  }
 }
 
-.bar {
-  fill: var(--orange);
-}
 
-.bar:hover {
-  fill: #774722;
-  transition: 0.3s ease-in-out;
-}

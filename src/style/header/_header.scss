@@ -1,7 +1,40 @@
+@use '../utils/variables' as var;
+
 header {
   height: 100px;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background-color: var(--white);
+  background-color: var.$white;
+
+  h1 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      list-style: none;
+      margin-top: 1em;
+  
+      a {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-inline: 1rem;
+        text-decoration: none;
+        letter-spacing: 1.2px;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+  
+        &:visited {
+          color: var.$black;
+        }
+      }
+    }
+  }
 }

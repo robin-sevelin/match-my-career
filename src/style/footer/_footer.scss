@@ -1,13 +1,15 @@
+@use '../utils/variables' as var;
+
 .footer {
     width: 100%;
     bottom: 0;
     position: relative;
-    background-color: #916F50;
+    background-color: var.$brown;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    color: #FFFFFF;
+    color: var.$white;
 }
 
 .left, .right {
@@ -16,7 +18,7 @@
 
 .footer .left a {
     text-decoration: none;
-    color: #EF7B22;
+    color: var.$orange;
     margin: 0;
     padding: 0;
 }

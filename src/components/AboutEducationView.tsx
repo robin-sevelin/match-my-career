@@ -47,7 +47,9 @@ export const AboutEducationView = () => {
             </p>
             <h3>Utbildningssamordnare: </h3>
             <p>{education.education.education_providers[0].name[0].content}</p>
-            <p>{education.education.education_providers[0].urls[0].content}</p>
+            <a href={education.education.education_providers[0].urls[0].content}>
+              {education.education.education_providers[0].urls[0].content}
+            </a>
             <h3>Utbildningstillfällen: </h3>
             <p>
               <strong>Startdatum: </strong>
@@ -59,7 +61,9 @@ export const AboutEducationView = () => {
             </p>
             <p>
               <strong>Länk: </strong>
+              <a href={education.education.education_providers[0].urls[0].content}>
               {education.education.education_providers[0].urls[0].content}
+              </a>
             </p>
             <p>
               <strong>Utbildningsperiod: </strong>

@@ -4,10 +4,16 @@ import {
   DigiTypography,
   DigiTypographyHeadingJumbo,
 } from '@digi/arbetsformedlingen-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../style/startpage/_startpage.scss';
 
 export const Home = () => {
+  const navigate = useNavigate();
+
+  const directToSearch = () => {
+    navigate('/search');
+  }
+
   return (
     <section className='startpage'>
       <DigiTypography>
@@ -40,8 +46,8 @@ export const Home = () => {
               Klicka antingen på knappen nedan eller navigera med hjälp av
               ovanstående meny för att påbörja en sökning.
             </p>
-            <DigiButton afVariation='primary'>
-              <Link to={'/search'}>Sök Utbildningar</Link>
+            <DigiButton afVariation='primary' onAfOnClick={directToSearch}>
+              Sök Utbildningar
             </DigiButton>
           </div>
         </div>
