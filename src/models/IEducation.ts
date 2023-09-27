@@ -32,7 +32,7 @@ export interface IEducation {
       occupations: string[];
       traits: string[];
 
-      subject: ISubject[];
+      subject: [code: string, name: string, nameEn: string, type: string];
       form: {
         code: string;
         type: string;
