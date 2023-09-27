@@ -8,8 +8,14 @@ section.searchpage {
     form {
       margin-top: 1em;
 
-      .digi-form-input--button-variation-primary .digi-form-input__input-wrapper.sc-digi-form-input-s>[slot^=button] button {
-        border: 1px solid var.$black !important;
+      svg {
+        color: var.$white !important;
+      }
+
+      .digi-form-input--button-variation-primary.digi-form-input--has-button-true.sc-digi-form-input .digi-form-input__input.sc-digi-form-input {
+        &:focus {
+          box-shadow: var.$orange 0 0 0.1rem 0.05rem !important;
+        }
       }
     }
     
@@ -26,11 +32,16 @@ section.searchpage {
       .eduCard {
         border-radius: 5px;
         background-color: var.$cardColor;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 15px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;;
         padding: 2rem;
         margin: 0.7rem;
         width: 430px;
         text-transform: capitalize;
+
+        h4 {
+          font-size: 1.1rem;
+        }
 
         p.eduCode {
           color: var.$orange;

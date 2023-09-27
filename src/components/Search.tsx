@@ -24,7 +24,7 @@ export const Search = () => {
         <form onSubmit={handleSubmit}>
           <DigiFormInputSearch
             value={input}
-            afLabel='Jobbtitel'
+            afLabel='Yrkestitel'
             afButtonText='Sök'
             onAfOnChange={(e) => setInput(e.target.value)}
           ></DigiFormInputSearch>

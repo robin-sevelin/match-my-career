@@ -5,13 +5,46 @@
   top: 50px;
   padding: 2em;
   min-height: 800px;
+
+  svg {
+    g.tick {
+      text {
+        fill: var.$black;
+        text-transform: capitalize;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      
+    }
+  }
+
+  tr {
+    th {
+      text-transform: capitalize;
+    }
+  }
+
+  .bar {
+    fill: var.$orange;
+  
+    &:hover {
+      fill: #b34a0e;
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  button {
+    margin-top: 2em;
+  }
+
+  #digi-button-f8fke > span.digi-button__text.sc-digi-button.sc-digi-button-s, 
+  #digi-button-f8fke > span.digi-button__icon.sc-digi-button.sc-digi-button-s > digi-icon-table > svg,
+  #digi-button-po5si > span.digi-button__text.sc-digi-button.sc-digi-button-s,
+  #digi-button-po5si > span.digi-button__icon.sc-digi-button.sc-digi-button-s > digi-icon-chart > svg {
+    color: var.$orange !important;
+  }
 }
 
-.bar {
-  fill: var.$orange;
-}
 
-.bar:hover {
-  fill: #774722;
-  transition: 0.3s ease-in-out;
-}
