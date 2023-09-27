@@ -5,14 +5,20 @@ import { Search } from '../models/Search';
 
 export const useGetOccupations = (search: Search) => {
   const [occupations, setOccupations] = useState<IOccupation[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (search) {
       const getData = async (text: string, education: string) => {
-        const data = await postMatchByText(text, education);
-        setOccupations(data);
+        try {
+          const data = await postMatchByText(text, education);
+          setOccupations(data);
+        } catch (error) {
+          console.log('Error', error);
+        } finally {
+          setIsLoading(false);
+        }
       };
-
       getData(
         search.occupationsSearch.text,
         search.occupationsSearch.education
@@ -20,5 +26,5 @@ export const useGetOccupations = (search: Search) => {
     }
   }, [search]);
 
-  return { occupations } as const;
+  return { occupations, isLoading } as const;
 };
