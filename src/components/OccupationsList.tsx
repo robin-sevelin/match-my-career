@@ -5,11 +5,20 @@ import { DigiButton } from '@digi/arbetsformedlingen-react';
 import { useNavigate } from 'react-router-dom';
 import { ShowLoader } from './ShowLoader';
 import { useGetOccupations } from '../hooks/useGetOccupations';
+import { NoResult } from './NoResult';
 
 export const OccupationsList = () => {
   const { search } = useContext(SearchContext);
   const navigate = useNavigate();
-  const { occupations } = useGetOccupations(search);
+  const { occupations, isLoading } = useGetOccupations(search);
+
+  if(isLoading) {
+    return (
+      <>
+        <ShowLoader></ShowLoader>
+      </>
+    )
+  }
 
   return (
     <div className='occupations-container'>
@@ -30,7 +39,7 @@ export const OccupationsList = () => {
           </div>
         ))
       ) : (
-        <ShowLoader></ShowLoader>
+        <NoResult heading='Utbildningen saknar relaterade yrken' message='Testa sök efter en annan utbildning'></NoResult>
       )}
       <div className='navigate-container'>
         <DigiButton
