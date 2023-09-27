@@ -10,12 +10,7 @@ import { useLocalStorage } from './hooks/useStorage';
 function App() {
   const [storedSearch, setStoredSearch] = useLocalStorage<Search>(
     'search',
-    new Search(
-      'frontend',
-      { text: '', education: '', name: '', code: '' },
-      '',
-      ''
-    )
+    new Search('', { text: '', education: '', name: '', code: '' }, '', '')
   );
   const [search, dispatch] = useReducer(SearchReducer, storedSearch);
 

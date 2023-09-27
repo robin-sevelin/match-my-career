@@ -17,20 +17,6 @@ export interface IAboutEducation {
       }
     ];
   };
-  education_providers: [
-    {
-      urls: [
-        {
-          content: string;
-        }
-      ];
-      name: [
-        {
-          content: string;
-        }
-      ];
-    }
-  ];
   events: [
     {
       execution: {
@@ -44,6 +30,20 @@ export interface IAboutEducation {
         }
       ];
       provider: string;
+    }
+  ];
+  education_providers: [
+    {
+      urls: [
+        {
+          content: string;
+        }
+      ];
+      name: [
+        {
+          content: string;
+        }
+      ];
     }
   ];
 }

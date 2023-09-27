@@ -19,20 +19,6 @@ export const ABOUT_EDUCATION_BASE_VALUES: IAboutEducation = {
       },
     ],
   },
-  education_providers: [
-    {
-      urls: [
-        {
-          content: '',
-        },
-      ],
-      name: [
-        {
-          content: '',
-        },
-      ],
-    },
-  ],
   events: [
     {
       execution: {
@@ -46,6 +32,20 @@ export const ABOUT_EDUCATION_BASE_VALUES: IAboutEducation = {
         },
       ],
       provider: '',
+    },
+  ],
+  education_providers: [
+    {
+      urls: [
+        {
+          content: '',
+        },
+      ],
+      name: [
+        {
+          content: '',
+        },
+      ],
     },
   ],
 };
