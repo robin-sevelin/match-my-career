@@ -20,7 +20,7 @@ export const SearchReducer = (search: Search, action: ISearchAction) => {
           text: data.text_enrichments_results.enriched_candidates
             .competencies[0],
           education: data.education.description[0].content,
-          name: data.education.subject[0].name,
+          name: data.education.title[0].content,
           code: data.education.form.code,
         },
       };
