@@ -1,5 +1,7 @@
+@use '../utils/variables' as var;
+
 .about-education-container {
-  background-color: #f6f3ee;
+  background-color: var.$white;
   border-radius: 5px;
   display: flex;
   flex-direction: column;

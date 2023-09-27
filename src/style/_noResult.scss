@@ -1,13 +1,15 @@
+@use './utils/variables' as var;
+
 section.noResultContainer {
     max-width: 45em;
     margin: 0 auto;
     margin-top: 4em;
 
     .sc-digi-notification-alert-h .digi-notification-alert__icon.sc-digi-notification-alert {
-        background-color: #ef7b22;
+        background-color: var.$orange;
     }
 
     .sc-digi-notification-alert-h .digi-notification-alert__wrapper.sc-digi-notification-alert {
-        border: 2px solid #ef7b22;
+        border: 2px solid var.$orange;
     }
 }

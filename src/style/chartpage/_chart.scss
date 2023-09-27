@@ -1,3 +1,5 @@
+@use '../utils/variables' as var;
+
 .chart-container {
   position: relative;
   top: 50px;
@@ -6,7 +8,7 @@
 }
 
 .bar {
-  fill: var(--orange);
+  fill: var.$orange;
 }
 
 .bar:hover {

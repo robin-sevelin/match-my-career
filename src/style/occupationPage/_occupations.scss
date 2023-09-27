@@ -1,3 +1,5 @@
+@use '../utils/variables' as var;
+
 .occupations-container {
   max-width: 1200px;
   margin: auto;
@@ -10,7 +12,7 @@
     }
   }
   .occupation-card {
-    background-color: #ffffff;
+    background-color: var.$cardColor;
     height: 120px;
     margin: auto;
     margin-block: 2em;
@@ -39,7 +41,7 @@
       }
 
       h4::after {
-        background-color: #ef7b22;
+        background-color: var.$orange;
         width: 100px;
       }
     }

@@ -1,3 +1,5 @@
+@use '../utils/variables' as var;
+
 section.searchpage {
     display: flex;
     flex-direction: column;
@@ -6,8 +8,8 @@ section.searchpage {
     form {
       margin-top: 1em;
 
-      button {
-        border: 1px solid #242327;
+      .digi-form-input--button-variation-primary .digi-form-input__input-wrapper.sc-digi-form-input-s>[slot^=button] button {
+        border: 1px solid var.$black !important;
       }
     }
     
@@ -23,7 +25,7 @@ section.searchpage {
       
       .eduCard {
         border-radius: 5px;
-        background-color: #fbfbfb;
+        background-color: var.$cardColor;
         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
         padding: 2rem;
         margin: 0.7rem;
@@ -31,7 +33,7 @@ section.searchpage {
         text-transform: capitalize;
 
         p.eduCode {
-          color: #EF7B22;
+          color: var.$orange;
           margin-top: 5px;
           margin-bottom: 1em;
           font-size: 0.9rem;

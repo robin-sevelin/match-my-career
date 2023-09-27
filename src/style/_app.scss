@@ -1,4 +1,5 @@
-@import './normalize';
+@use './utils/variables' as var;
+@import './utils/normalize';
 @import './occupationPage/occupations';
 @import './chartpage/chart';
 @import './header/header';
@@ -7,13 +8,6 @@
 @import './errorpage/errorpage';
 
 :root {
-  --orange: #ef7b22;
-  --grey: #9f9d9c;
-  --white: #f6f3ee;
-  --brown: #916f50;
-  --dark: #242327;
-  --red: #e54236;
-
   --digi--button--color--text--hover: var(--red);
 }
 
@@ -26,8 +20,8 @@
 
 body {
   position: relative;
-  color: #242327;
-  background-color: #f6f3ee;
+  color: var.$black;
+  background-color: var.$white;
 }
 
 a {
@@ -84,17 +78,17 @@ h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
 }
 
 .digi-button--variation-primary {
-  background-color: var(--orange) !important;
-  color: var(--white) !important;
-  border: 1px solid var(--orange) !important;
+  background-color: var.$orange !important;
+  color: var.$white !important;
+  border: 1px solid var.$orange !important;
 }
 
 .digi-button--variation-secondary {
-  background-color: var(--grey) !important;
-  color: var(--white) !important;
+  background-color: var.$gray !important;
+  color: var.$white !important;
 }
 
 .sc-digi-typography-heading-jumbo-h
   .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after {
-  background-color: var(--orange);
+  background-color: var.$orange;
 }
