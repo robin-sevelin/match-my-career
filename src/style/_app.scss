@@ -7,10 +7,6 @@
 @import './searchpage/searchpage';
 @import './errorpage/errorpage';
 
-:root {
-  --digi--button--color--text--hover: var(--red);
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -24,21 +20,10 @@ body {
   background-color: var.$white;
 }
 
-form {
-  margin: auto;
-  max-width: 200px;
-  margin-bottom: 2rem;
-}
-
 main {
   min-height: calc(100vh - 300px);
   margin: auto;
   margin-bottom: 100px;
-}
-
-.competencies {
-  margin-top: 1rem;
-  height: 500px;
 }
 
 .loaderContainer {
@@ -46,10 +31,6 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-}
-
-.menu-select-container {
-  width: 500px;
 }
 
 h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {

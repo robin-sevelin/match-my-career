@@ -6,8 +6,11 @@ section.searchpage {
     align-items: center;
 
     form {
+      margin: auto;
       margin-top: 1em;
-
+      margin-bottom: 2rem;
+      max-width: 200px;
+      
       svg {
         color: var.$white !important;
       }
