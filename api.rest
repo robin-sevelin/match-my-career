@@ -1,0 +1,27 @@
+
+### enriched occupations
+
+GET https://jobed-connect-api.jobtechdev.se/v1/enriched_occupations?occupation_id=42SW_cUg_uq2&include_metadata=true
+
+
+#### search by text
+
+POST https://jobed-connect-api.jobtechdev.se/v1/occupations/match-by-text?input_text=front%20end&input_headline=systemutvecklare&limit=10&offset=0&include_metadata=false
+Content-Type: application/json
+
+
+
+### get educations
+
+GET https://jobed-connect-api.jobtechdev.se/v1/educations?query=kock&education_type=kurs&education_form=h%C3%B6gskoleutbildning&distance=false&filter_education_plan_exists=false
+
+
+### get about education: id
+
+GET https://jobed-connect-api.jobtechdev.se/v1/educations/i.fbr.71834.402354
+
+
+
+### get 
+
+GET https://jobed-connect-api.jobtechdev.se/v1/searchparameters/municipalities

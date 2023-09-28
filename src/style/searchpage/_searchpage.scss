@@ -1,0 +1,67 @@
+@use '../utils/variables' as var;
+
+section.searchpage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      margin: auto;
+      margin-top: 1em;
+      margin-bottom: 2rem;
+      max-width: 200px;
+      
+      svg {
+        color: var.$white !important;
+      }
+
+      .digi-form-input--button-variation-primary.digi-form-input--has-button-true.sc-digi-form-input 
+      .digi-form-input__input.sc-digi-form-input {
+        &:focus {
+          box-shadow: var.$orange 0 0 0.1rem 0.05rem !important;
+        }
+      }
+    }
+    
+    .result {
+      width: 100%;
+      .cardContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 60em;
+        margin: 0 auto;
+      }
+      
+      .eduCard {
+        border-radius: 5px;
+        background-color: var.$cardColor;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 15px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        padding: 2rem;
+        margin: 0.7rem;
+        width: 430px;
+        text-transform: capitalize;
+
+        h4 {
+          font-size: 1.1rem;
+        }
+
+        p.eduCode {
+          color: var.$orange;
+          margin-top: 5px;
+          margin-bottom: 1em;
+          font-size: 0.9rem;
+        }
+
+        p {
+          margin-top: 4px;
+        }
+
+        button {
+          margin-top: 2.5rem;
+          margin-left: 10px;
+        }
+      }
+    } 
+}

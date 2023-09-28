@@ -1,0 +1,24 @@
+@use '../utils/variables' as var;
+
+.footer {
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    background-color: var.$brown;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var.$white;
+}
+
+.left, .right {
+    margin: 1rem;
+}
+
+.footer .left a {
+    text-decoration: none;
+    color: var.$orange;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,45 @@
+section.startpage {
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+
+    .flexContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .photoContainer {
+            margin-left: 4em;
+            height: 37em;
+            background: linear-gradient(180deg, rgba(208, 102, 20, 0.48) 99.99%, rgba(26, 26, 26, 0.41) 100%);
+
+            img {
+                position: relative;
+                z-index: -1;
+                width: 30em;
+                height: 37em;
+            }
+        }
+
+        .informationContainer {
+            margin-left: 5em;
+            margin-top: 2em;
+
+            .sc-digi-typography-heading-jumbo-h .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
+                text-transform: uppercase;
+            }
+
+            p{
+                max-width: 23rem;
+            }
+
+            button {
+                a {
+                    color: #F6F3EE;
+                    text-decoration: none;
+                    font-weight: 500;
+                }
+            }
+        }
+    }   
+}

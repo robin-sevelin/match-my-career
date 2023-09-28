@@ -1,0 +1,78 @@
+@use './utils/variables' as var;
+@import './utils/normalize';
+@import './occupationPage/occupations';
+@import './chartpage/chart';
+@import './header/header';
+@import './aboutpage/aboutpage';
+@import './searchpage/searchpage';
+@import './errorpage/errorpage';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  position: relative;
+  color: var.$black;
+  background-color: var.$white;
+}
+
+main {
+  min-height: calc(100vh - 300px);
+  margin: auto;
+  margin-bottom: 100px;
+
+  a {
+    &:hover {
+      color: var.$orange !important;
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: var.$black;
+    }
+  }
+}
+
+.loaderContainer {
+  width: 10em;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+h4.digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo {
+  font-size: 1.2em !important;
+}
+
+.digi-button--variation-primary {
+  background-color: var.$orange !important;
+  color: var.$white !important;
+  border: 1px solid var.$orange !important;
+
+  &:hover {
+    background-color: var.$btnHoverColorPrimary !important;
+    color: var.$white !important;
+    border: 1px solid var.$btnHoverColorPrimary !important;
+  }
+}
+
+.digi-button--variation-secondary {
+  background-color: var.$gray !important;
+  color: var.$white !important;
+  border: 1px solid var.$gray !important;
+
+  &:hover {
+    background-color: var.$btnHoverColorSecondary !important;
+    color: var.$white !important;
+    border: 1px solid var.$btnHoverColorSecondary !important;
+  }
+}
+
+.sc-digi-typography-heading-jumbo-h
+  .digi-typography-heading-jumbo.sc-digi-typography-heading-jumbo::after {
+  background-color: var.$orange;
+}
