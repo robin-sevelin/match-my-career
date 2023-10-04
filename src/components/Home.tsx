@@ -20,7 +20,7 @@ export const Home = () => {
         <div className='flexContainer'>
           <div className='photoContainer'>
             <img
-              src='/mathematics.jpg'
+              src='mathematics.jpg'
               loading='lazy'
               alt='silhuette writing equations'
             ></img>
